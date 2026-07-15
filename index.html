@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yolando Growth Marketing Plan | Neel Das</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --blue: #2563EB; --blue-dark: #1D4ED8; --blue-light: #EFF6FF; --blue-pale: #DBEAFE;
+    --navy: #0F172A;
+    --green: #10B981; --green-light: #ECFDF5; --green-dark: #059669;
+    --amber: #F59E0B; --amber-light: #FFFBEB; --amber-dark: #D97706;
+    --red: #EF4444; --red-light: #FEF2F2;
+    --purple: #8B5CF6; --purple-light: #F5F3FF;
+    --orange: #F97316; --orange-light: #FFF7ED;
+    --teal: #0891B2; --teal-light: #ECFEFF;
+    --body: #334155; --body-dark: #1E293B;
+    --muted: #64748B;
+    --bg: #F8FAFC;
+    --border: #E2E8F0;
+    --gold: #CA8A04; --gold-light: #FEF9C3;
+    --silver: #94A3B8; --silver-light: #F1F5F9;
+    --bronze: #92613A; --bronze-light: #FDF4EC;
+    --card-shadow: 0 14px 36px -6px rgba(0,0,0,0.22), 0 8px 16px -4px rgba(0,0,0,0.12);
+    --card-hover: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 4px 10px -6px rgb(0 0 0 / 0.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--bg); color: var(--body-dark); line-height: 1.55; display: flex; min-height: 100vh; }
+  .sidebar { width: 232px; min-height: 100vh; background: #fff; border-right: 1px solid var(--border); position: fixed; top: 0; left: 0; display: none; flex-direction: column; z-index: 50; }
+  .sidebar.visible { display: flex; }
+  .sidebar-header { padding: 20px 20px 16px; border-bottom: 1px solid var(--border); }
+  .nav-list { list-style: none; padding: 12px 8px; flex: 1; overflow-y: auto; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--muted); transition: all 0.15s; margin-bottom: 2px; }
+  .nav-item:hover { background: #F1F5F9; color: var(--body-dark); }
+  .nav-item.active { background: var(--blue-light); color: var(--blue); font-weight: 700; }
+  .sidebar-footer { padding: 16px 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+  .sidebar-footer strong { color: var(--body-dark); }
+  .main { margin-left: 0; flex: 1; padding: 32px 40px 60px; }
+  .tab-eyebrow { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 8px; }
+  .tab-title { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; color: var(--navy); margin-bottom: 8px; }
+  .tab-subtitle { font-size: 17px; color: var(--body); line-height: 1.55; margin-bottom: 28px; }
+  .tab { display: none; }
+  .tab.active { display: block; animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .card { background: #fff; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--card-shadow); padding: 20px; margin-bottom: 16px; transition: box-shadow 0.2s, transform 0.15s; }
+  .card.hover:hover { box-shadow: var(--card-hover); transform: translateY(-2px); cursor: pointer; }
+  .card-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+  .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+  .tag-blue { background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-pale); }
+  .tag-green { background: var(--green-light); color: var(--green-dark); border: 1px solid #A7F3D0; }
+  .tag-amber { background: var(--amber-light); color: var(--amber-dark); border: 1px solid #FDE68A; }
+  .tag-red { background: var(--red-light); color: var(--red); border: 1px solid #FECACA; }
+  .tag-purple { background: var(--purple-light); color: var(--purple); border: 1px solid #DDD6FE; }
+  .tag-gray { background: #F1F5F9; color: var(--body); border: 1px solid var(--border); }
+  .takeaway { margin-top: 28px; padding: 20px; border-radius: 16px; background: linear-gradient(135deg, #EFF6FF, #F0F0FF); border: 1px solid #DBEAFE; display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--body); line-height: 1.6; }
+  .takeaway svg { flex-shrink: 0; color: var(--blue); margin-top: 2px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .data-table th { text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 8px 12px; border-bottom: 2px solid var(--border); }
+  .data-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--body-dark); vertical-align: top; font-size: 14px; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .expand-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.2s ease; opacity: 0; }
+  .open > .expand-body { max-height: 2000px; opacity: 1; margin-top: 12px; }
+  .expand-hint { font-size: 12px; color: #6366F1; font-weight: 600; margin-top: 6px; }
+  .open > .expand-hint { display: none; }
+  .tier-wrap { margin-bottom:16px; }
+  .tier-header { display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:10px 0 8px;border-bottom:2px solid var(--border);margin-bottom:0;transition:margin 0.2s; }
+  .tier-header:hover { opacity:0.8; }
+  .tier-chevron { transition:transform 0.25s;font-size:18px;color:var(--muted); }
+  .tier-wrap.open .tier-chevron { transform:rotate(180deg); }
+  .tier-body { max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0; }
+  .tier-wrap.open .tier-body { max-height:4000px;opacity:1; }
+  .tier-wrap.open .tier-header { margin-bottom:10px; }
+  .stat-value { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat-label { font-size: 14px; color: var(--body); margin-top: 4px; }
+  .score-signal { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; cursor: pointer; transition: background 0.1s; margin-bottom: 2px; }
+  .score-signal:hover { background: #F8FAFC; }
+  .score-check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; font-size: 14px; }
+  .score-signal.checked .score-check { background: var(--blue); border-color: var(--blue); color: white; }
+  .score-signal-name { flex: 1; font-size: 14px; color: var(--body-dark); }
+  .score-signal-pts { font-size: 14px; font-weight: 800; color: var(--blue); width: 36px; text-align: right; }
+  .funnel-stage { display: flex; align-items: center; justify-content: center; height: 48px; border-radius: 10px; color: white; font-weight: 700; font-size: 14px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; margin: 0 auto; }
+  .funnel-stage:hover { transform: scale(1.03); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .funnel-detail { display: none; text-align: center; padding: 8px 16px; background: #F8FAFC; border-radius: 8px; font-size: 13px; color: var(--body); max-width: 90%; margin: 4px auto; }
+  .funnel-detail.show { display: block; }
+  .funnel-arrow { text-align: center; padding: 2px 0; font-size: 13px; color: var(--muted); }
+  .funnel-arrow .rate { font-weight: 700; color: var(--body-dark); }
+  .tooltip { display: none; position: fixed; z-index: 300; background: var(--navy); color: #fff; padding: 10px 14px; border-radius: 10px; font-size: 13px; line-height: 1.45; max-width: 300px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); pointer-events: none; }
+  .tooltip.show { display: block; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: middle; margin-right: 6px; }
+  .dot-full { background: var(--green); }
+  .dot-partial { background: var(--amber); }
+  .dot-none { background: #E2E8F0; }
+  .icon-box { display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0; }
+  .bottom-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .btn { padding: 10px 20px; border-radius: 12px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  .btn-primary { background: var(--blue); color: white; }
+  .btn-primary:hover { background: var(--blue-dark); }
+  .btn-ghost { background: none; color: var(--muted); }
+  .btn-ghost:hover { background: #F1F5F9; }
+  .btn:disabled { opacity: 0.3; cursor: default; }
+  .toggle-group { display: inline-flex; background: #F1F5F9; border-radius: 10px; padding: 3px; border: 1px solid var(--border); margin-bottom: 16px; }
+  .toggle-btn { padding: 8px 18px; border: none; background: transparent; border-radius: 8px; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+  .toggle-btn.active { background: var(--navy); color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .radar-wrap { max-width: 420px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg, #E87B5A, #C26445, #E87B5A);z-index:1000;"></div>
+<div class="tooltip" id="tooltip"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header" style="padding:18px 16px 14px;cursor:pointer;display:flex;align-items:center;gap:0;" onclick="switchTab(0)">
+    <img src="data:image/png;base64,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" alt="" style="height:24px;width:24px;object-fit:contain;margin-right:8px;">
+    <span style="font-size:19px;font-weight:700;color:#0F172A;font-family:Plus Jakarta Sans,sans-serif;letter-spacing:-0.3px;">yolando</span>
+  </div>
+  <ul class="nav-list" id="navList"></ul>
+  <div class="sidebar-footer"><strong>Neel Das</strong><br>Growth Marketing Plan</div>
+</nav>
+
+<main class="main" id="main"></main>
+
+<script>
+const TABS = [
+  { id: "cover", label: "Cover", icon: "home" },
+  { id: "about", label: "About This Project", icon: "info" },
+  { id: "challenge", label: "Market Context", icon: "grid" },
+  { id: "competitive", label: "Competitive Landscape", icon: "swords" },
+  { id: "icp", label: "ICP + Buying Committee", icon: "target" },
+  { id: "acctintel", label: "Account Intelligence", icon: "search" },
+  { id: "scoring", label: "Scoring + Tiering", icon: "layers" },
+  { id: "messaging", label: "Messaging Framework", icon: "message" },
+  { id: "programs", label: "Programs + Channels", icon: "megaphone" },
+  { id: "funnel", label: "Funnel Math + Attribution", icon: "trending" },
+  { id: "timeline", label: "90-Day Plan", icon: "calendar" },
+  { id: "outreach", label: "Outreach Packages", icon: "mail" },
+  { id: "ai", label: "AI Execution Layer", icon: "cpu" },
+];
+
+const HEADERS = [
+  ["","",""],
+  ["About This Project","What this dashboard is and how it was built.","Context for portfolio reviewers."],
+  ["Market Context","An 18-month-old category with a $1B unicorn and 84% of buyers still doing nothing.","The AEO/GEO market is growing at 40-50% CAGR, but awareness far outpaces adoption. The growth marketer has to educate and capture simultaneously."],
+  ["Competitive Landscape","Every competitor owns a piece. Nobody closes the execution loop.","Yolando sits between monitoring-only tools and enterprise platforms. The bet is that mid-market teams need execution, not more dashboards."],
+  ["ICP + Buying Committee","Growth-stage B2B SaaS where organic traffic is declining and AI search is the blind spot.","50-500 employees, Series A-C, $10M-$50M ARR. Marketing teams of 3-10 people who cannot hire a dedicated AEO specialist but need the output of one."],
+  ["Account Intelligence","How we find, research, and build intelligence on target accounts.","The ICP defines who we are looking for. This section defines how we find them and build the intelligence needed to score and prioritize."],
+  ["Scoring + Tiering","Not all accounts are equal. Signal-based scoring determines where to invest time.","Behavioral triggers get weighted, scored, and broken into tiers. The scoring model matches the constraint of a 12-person startup with founder-led sales."],
+  ["Messaging Framework","What we say, to whom, and how it changes by situation.","Three layers build on each other: a market narrative, positioning angles per persona, and competitive differentiation with specific objection handling."],
+  ["Programs + Channels","The channels and programs that turn awareness into pipeline.","Non-paid, earned channels first. Founder-led LinkedIn, AEO-optimized content, signal-triggered outreach, community engagement, and G2 presence. Paid comes later."],
+  ["Funnel Math","The math that connects experiments to pipeline.","Conservative assumptions for a 12-person startup in an 18-month-old category with founder-led sales. Every number is a starting hypothesis."],
+  ["90-Day Plan","Three months from zero to repeatable pipeline.","Month 1: infrastructure and first outreach. Month 2: content velocity and community. Month 3: full activation and channel validation."],
+  ["Outreach Packages","What signal-triggered outreach actually looks like for four real accounts.","Each Tier 1 account gets per-persona emails, LinkedIn connection notes, and phone scripts — all generated by the Account Intelligence system and ready to deploy."],
+  ["AI Execution Layer","How AI accelerates this plan.","The AI layer makes research, scoring, and outreach generation executable at scale with a lean team."],
+];
+
+const SVG = {
+  info: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+  check: '✓',
+  arrowR: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>',
+  chevronD: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>',
+};
+
+let activeTab = 0;
+let radarChart = null;
+let selectedCompetitor = null;
+
+function buildNav() {
+  document.getElementById('navList').innerHTML = TABS.slice(1).map((t, i) => `<li class="nav-item${i === 0 ? ' active' : ''}" onclick="switchTab(${i + 1})">${t.label}</li>`).join('');
+}
+
+function switchTab(i) {
+  activeTab = i;
+  document.querySelectorAll('.nav-item').forEach((el, j) => el.classList.toggle('active', j === i - 1));
+  renderMain();
+  window.scrollTo(0, 0);
+}
+
+function resetTab() {
+  document.querySelectorAll('.open').forEach(el => el.classList.remove('open'));
+  document.querySelectorAll('.tier-wrap.open').forEach(el => el.classList.remove('open'));
+  window.scrollTo(0, 0);
+}
+
+function renderMain() {
+  const sidebar = document.getElementById('sidebar');
+  const main = document.getElementById('main');
+  if (activeTab === 0) {
+    sidebar.classList.remove('visible');
+    main.style.marginLeft = '0';
+    main.innerHTML = '<div id="tabContent"></div>';
+    renderCover();
+    return;
+  }
+  sidebar.classList.add('visible');
+  main.style.marginLeft = '232px';
+  const [eyebrow, title, subtitle] = HEADERS[activeTab];
+  main.innerHTML = `
+    <div class="tab-eyebrow">${eyebrow}</div>
+    <h1 class="tab-title">${title}</h1>
+    <p class="tab-subtitle">${subtitle}</p>
+    <div id="tabContent"></div>
+    <div class="bottom-nav">
+      <button class="btn btn-ghost" onclick="switchTab(${activeTab - 1})">← Previous</button>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span style="font-size:13px;color:#6366F1;cursor:pointer;font-weight:600;" onclick="resetTab()">↺ Reset</span>
+        <span style="font-size:14px;color:var(--muted);font-weight:600;">${activeTab} / ${TABS.length - 1}</span>
+      </div>
+      <button class="btn btn-primary" onclick="switchTab(${activeTab + 1})" ${activeTab === TABS.length - 1 ? 'disabled' : ''}>Next →</button>
+    </div>
+  `;
+  const renderers = [null, renderAbout, renderChallenge, renderCompetitive, renderICP, renderAccountIntel, renderScoring, renderMessaging, renderPrograms, renderFunnel, renderTimeline, renderOutreach, renderAI];
+  renderers[activeTab]();
+}
+
+// ═══ HELPERS ═══
+function card(content, extra = '') { return `<div class="card ${extra}">${content}</div>`; }
+function takeaway(text) { return `<div class="takeaway">${SVG.info}<div>${text}</div></div>`; }
+function tag(label, color) { return `<span class="tag tag-${color}">${label}</span>`; }
+function toggleExpand(el) { el.classList.toggle('open'); }
+function toggleTier(el) { el.closest('.tier-wrap').classList.toggle('open'); }
+
+// ═══ COVER ═══
+function renderCover() {
+  document.getElementById('tabContent').innerHTML = `
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 120px);text-align:center;padding:40px 20px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+        <img src="data:image/png;base64,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" alt="" style="height:40px;width:40px;object-fit:contain;">
+        <span style="font-size:30px;font-weight:700;color:#0F172A;letter-spacing:-0.3px;">yolando</span>
+      </div>
+      <div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--blue);margin-bottom:16px;">Growth Marketing Plan</div>
+      <h1 style="font-size:48px;font-weight:800;letter-spacing:-0.04em;color:var(--navy);line-height:1.1;margin-bottom:8px;">0→1 Demand Generation</h1>
+      <div style="width:80px;height:3px;border-radius:2px;background:linear-gradient(90deg, #E87B5A, #C26445, #E87B5A);margin:20px 0;"></div>
+      <div style="font-size:18px;color:var(--body-dark);margin-bottom:32px;max-width:520px;line-height:1.6;">
+        A scrappy, data-driven growth plan for <strong>Yolando</strong>, a B2B SaaS AEO/GEO platform helping brands get found by AI. Built entirely from public data.
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px;max-width:600px;">
+        ${['Market Context','Competitive Landscape','ICP','Account Intelligence','Scoring','Messaging','Programs','Funnel Math','90-Day Plan','Outreach Packages','AI Execution'].map(t => `
+          <span style="font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;background:#F1F5F9;color:var(--navy);border:1px solid var(--border);">${t}</span>
+        `).join('')}
+      </div>
+      <button class="btn btn-primary" onclick="switchTab(1)" style="padding:14px 36px;font-size:16px;border-radius:14px;">
+        Explore the Plan →
+      </button>
+      <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);">
+        <div style="font-size:16px;color:var(--navy);font-weight:700;">Neel Das</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:4px;">B2B Growth & Demand Generation</div>
+        <div style="display:flex;gap:16px;justify-content:center;margin-top:10px;">
+          <a href="https://neeldas.ca" target="_blank" style="font-size:13px;color:var(--blue);text-decoration:none;font-weight:600;">neeldas.ca</a>
+          <a href="https://github.com/neeldas1209" target="_blank" style="font-size:13px;color:var(--blue);text-decoration:none;font-weight:600;">GitHub</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ═══ ABOUT ═══
+function renderAbout() {
+  document.getElementById('tabContent').innerHTML = `
+    <div class="card" style="padding:28px;margin-bottom:20px;border-left:4px solid var(--navy);background:linear-gradient(135deg,#EFF6FF,#E0E7FF 50%,#EDE9FE);border:1px solid #C7D2FE;">
+      <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:10px;">What This Dashboard Is</div>
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.7;">
+        This is a complete 0→1 growth marketing plan built as a case study for Yolando, a B2B SaaS platform ($8.5M raised from Drive Capital, 12 people) that helps marketers understand and improve how AI models discover, cite, and recommend their brand. Yolando operates in the emerging Answer Engine Optimization (AEO) / Generative Engine Optimization (GEO) category — a $1.09-1.48B market growing at 40-50% CAGR. The plan was built for the Growth Marketing Lead role and covers the full stack: market intelligence, ICP definition, channel strategy, messaging framework, 90-day execution plan, and a working AI execution layer. Every data point was researched from publicly available information.
+      </div>
+    </div>
+
+    <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:12px;">What It Covers</div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      ${[
+        ['Market Context + Competitive Landscape','$1.09-1.48B AEO/GEO market analysis, competitive profiling of Profound ($155M raised), Otterly.ai, Daydream, BrightEdge, Botify, Yext, and disruption risk from HubSpot, Semrush, Ahrefs.','var(--blue)'],
+        ['ICP + Buying Committee','Firmographic, technographic, and behavioral filters for growth-stage B2B SaaS (50-500 employees, Series A-C). Five buying committee personas with pain points and value props.','var(--purple)'],
+        ['Account Intelligence + Scoring','8 behavioral triggers, signal sourcing methods, 3-tier account prioritization. Four Tier 1 accounts fully profiled: Unbounce, Vidyard, Chili Piper, Ada.','var(--green-dark)'],
+        ['Messaging Framework','Market narrative, 4 positioning angles (From Invisible to Cited, AI Search as Revenue Channel, The AEO Team You Cannot Hire, Full-Stack at Mid-Market Pricing), per-persona messaging, competitive differentiation, and 5 objection handlers.','var(--orange)'],
+        ['Programs + Channels','Hybrid GTM motion: founder-led LinkedIn, AEO-optimized blog (dogfooding), signal-triggered outreach, G2 presence, community engagement. Agency partnership program. Channels to avoid.','var(--amber-dark)'],
+        ['Funnel Math + 90-Day Timeline','Conservative funnel model for founder-led sales with 30-60 day cycles. Three-month execution plan with weekly detail, 3 experiments, 5 quick wins, and 6 go/no-go decision points.','var(--red)'],
+        ['Account Outreach Packages','Four Tier 1 accounts with per-persona email sequences, LinkedIn connection notes, and phone scripts with objection handling.','var(--blue)'],
+        ['AI Execution Layer','Two working AI systems built in Claude Code: a 5-agent GTM Strategy Engine and a 6-agent Account Intelligence and Outreach System. Both tested on Yolando.','var(--navy)'],
+      ].map(([title,desc,color]) => `
+        <div class="card" style="padding:16px 18px;border-left:4px solid ${color};">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">${title}</div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:12px;">How It Was Built</div>
+    <div class="card" style="padding:22px;margin-bottom:20px;">
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.8;">
+        <strong>Research:</strong> Market analysis, competitive intelligence, and product research conducted entirely from public sources including company websites, funding announcements, G2 reviews, product documentation, LinkedIn, press coverage, and analyst reports. 87 sources cited across 41 search queries.<br><br>
+        <strong>AI systems:</strong> The GTM Strategy Engine (5 agents) and Account Intelligence and Outreach System (6 agents) are working demos built in Claude Code. The GTM engine was tested against Yolando. Findings from these systems directly informed the plan.<br><br>
+        <strong>Dashboard:</strong> Single-file interactive HTML built with vanilla JavaScript and Chart.js. Designed for live presentation with expandable sections, interactive scoring calculators, toggle views, and hover details.<br><br>
+        <strong>Iteration:</strong> The plan was developed iteratively, pressure-testing every assumption from ICP filters to channel prioritization to funnel math against the constraint of a 12-person startup with no marketing team and limited budget.
+      </div>
+    </div>
+
+    <div class="card" style="padding:24px;margin-bottom:20px;border-left:4px solid var(--navy);">
+      <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:10px;">About Me</div>
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.8;">
+        <strong>Neel Das</strong> — B2B marketer with approximately nine years of experience spanning enterprise sales, demand generation, ABM, and lifecycle marketing. Background includes demand generation at scale, account-based programs, and building AI-powered marketing systems.<br><br>
+        <strong>Portfolio:</strong> <a href="https://neeldas.ca" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:600;">neeldas.ca</a> &nbsp;|&nbsp; <strong>GitHub:</strong> <a href="https://github.com/neeldas1209" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:600;">github.com/neeldas1209</a>
+      </div>
+    </div>
+
+    <div style="padding:18px 22px;border-radius:12px;background:#F8FAFC;border:1px solid var(--border);margin-bottom:4px;">
+      <div style="font-size:14px;font-weight:700;color:var(--muted);margin-bottom:6px;">Disclaimer</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7;">
+        This dashboard is an independent case study created for portfolio purposes. It is not affiliated with, endorsed by, or produced in collaboration with Yolando or any of its employees. All information used in this plan was sourced from publicly available materials including company websites, press releases, product documentation, LinkedIn, G2, and analyst reports. No proprietary, confidential, or non-public information was used. All competitive analysis, market sizing, funnel assumptions, and strategic recommendations are the author's own work and do not represent Yolando's actual plans, strategies, or internal data.
+      </div>
+    </div>
+  `;
+}
+
+// ═══ MARKET CONTEXT ═══
+function renderChallenge() {
+  document.getElementById('tabContent').innerHTML = `
+    <div style="border-radius:16px;padding:24px;margin-bottom:24px;background:linear-gradient(135deg,#EFF6FF,#E0E7FF 50%,#EDE9FE);border:1px solid #C7D2FE;">
+      <p style="font-size:17px;line-height:1.65;color:var(--body-dark);">
+        Traditional search — the backbone of B2B discovery for two decades — is structurally collapsing. AI Overviews now appear on 48% of Google queries, zero-click rates have reached 65-70%, and 51% of B2B buyers start research in AI chatbots rather than Google. <strong style="color:var(--navy);">Yolando exists to close the execution gap:</strong> monitor AI visibility, tell teams exactly what to change, and produce the content that earns citations.
+      </p>
+      <div style="margin-top:16px;display:inline-block;padding:8px 18px;border-radius:12px;font-size:16px;font-weight:800;background:rgba(37,99,235,0.12);color:var(--blue);border:1px solid rgba(37,99,235,0.2);">
+        Monitor → Recommend → Produce → Get Cited
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px;">
+      <div style="border-radius:16px;padding:24px;background:linear-gradient(180deg,#EFF6FF,#DBEAFE);border:1px solid #BFDBFE;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="icon-box" style="width:42px;height:42px;background:var(--blue);color:white;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div style="font-size:18px;font-weight:800;color:var(--navy);">Job 1: Category Education</div>
+        </div>
+        <p style="font-size:16px;color:var(--body-dark);line-height:1.6;">84% of companies do not track AI search visibility. 94% of CMOs plan to increase AEO investment. That 78-point gap between intent and action is the market. <strong style="color:var(--navy);">Most buyers do not know they have this problem yet.</strong></p>
+      </div>
+      <div style="border-radius:16px;padding:24px;background:linear-gradient(180deg,#FFF7ED,#FFEDD5);border:1px solid #FED7AA;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="icon-box" style="width:42px;height:42px;background:var(--orange);color:white;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div style="font-size:18px;font-weight:800;color:var(--navy);">Job 2: Demand Capture</div>
+        </div>
+        <p style="font-size:16px;color:var(--body-dark);line-height:1.6;">Real buying signals exist now: declining organic traffic, competitors in AI answers, new VP Marketing hires, fresh Series B funding. <strong style="color:var(--navy);">These accounts are in motion today.</strong></p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:8px;">
+      <div class="card" style="border-left:4px solid var(--amber-dark);padding:16px 18px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--amber-dark)" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          <span style="font-size:18px;font-weight:800;color:var(--navy);">Competitive Pressure</span>
+        </div>
+        ${[
+          ['HubSpot','AEO at $50/mo via XFunnel acquisition, 228K+ customers',"Apr '26",'var(--orange)'],
+          ['Google','Free AI reports in Search Console, UK-first',"Jun '26",'var(--blue)'],
+          ['Semrush / Ahrefs','AEO add-ons ($99-$699/mo) to massive installed bases',"2025-26",'var(--purple)'],
+          ['Profound','$155M raised, $1B unicorn, 700+ enterprise clients',"Feb '26",'var(--green)'],
+        ].map(([name,move,when,color]) => `
+          <div style="display:flex;align-items:center;gap:10px;padding:7px 4px;border-radius:10px;transition:background 0.1s;" onmouseover="this.style.background='#F8FAFC'" onmouseout="this.style.background='transparent'">
+            <div class="icon-box" style="width:44px;height:44px;background:${color}15;color:${color};">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-weight:800;font-size:16px;color:var(--navy);">${name}</div>
+              <div style="font-size:15px;color:var(--body-dark);">${move}</div>
+            </div>
+            <span style="font-size:13px;font-weight:700;color:var(--navy);background:#F1F5F9;padding:4px 10px;border-radius:8px;">${when}</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="display:grid;grid-template-rows:1fr 1fr 1fr;gap:10px;">
+        <div class="card" style="border-left:4px solid var(--blue);display:flex;align-items:center;gap:14px;padding:14px 18px;">
+          <div class="icon-box" style="width:44px;height:44px;background:var(--blue-light);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div><div class="stat-value" style="color:var(--blue);font-size:28px;">$1.09-1.48B</div><div class="stat-label">AEO/GEO market size (2026), 40-50% CAGR</div></div>
+        </div>
+        <div class="card" style="border-left:4px solid var(--green);display:flex;align-items:center;gap:14px;padding:14px 18px;">
+          <div class="icon-box" style="width:44px;height:44px;background:var(--green-light);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div><div class="stat-value" style="color:var(--green);font-size:28px;">51%</div><div class="stat-label">B2B buyers start research in AI chatbots (up from 29%)</div></div>
+        </div>
+        <div class="card" style="border-left:4px solid var(--amber-dark);display:flex;align-items:center;gap:14px;padding:14px 18px;">
+          <div class="icon-box" style="width:44px;height:44px;background:var(--amber-light);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--amber-dark)" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+          </div>
+          <div><div class="stat-value" style="color:var(--amber-dark);font-size:28px;">78 pts</div><div class="stat-label">Gap between CMO intent (94%) and current tracking (16%)</div></div>
+        </div>
+      </div>
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> The opportunity window is 18-36 months, widest in 2026-2027. Yolando\'s AI Writing Studio (execution, not just analytics) is its most defensible moat. The plan must educate and capture simultaneously — scrappy distribution first, paid later.')}
+  `;
+}
+
+// ═══ COMPETITIVE LANDSCAPE ═══
+const COMP_RADAR_MAP = { profound: 0, otterly: 1, daydream: 2, brightedge: 3, hubspot: 4, yolando: 5 };
+
+function selectCompetitor(key) {
+  selectedCompetitor = selectedCompetitor === key ? null : key;
+  document.querySelectorAll('[data-comp-cap]').forEach(el => {
+    el.classList.toggle('open', el.dataset.compCap === selectedCompetitor);
+  });
+  document.querySelectorAll('[data-comp-battle]').forEach(el => {
+    el.classList.toggle('open', el.dataset.compBattle === selectedCompetitor);
+  });
+  if (radarChart) {
+    radarChart.data.datasets.forEach((ds, i) => {
+      if (selectedCompetitor === null) {
+        ds.borderWidth = i === 5 ? 3 : 1.5;
+        ds.pointRadius = i === 5 ? 4 : 3;
+        ds.backgroundColor = i === 5 ? 'rgba(5,150,105,0.1)' : 'transparent';
+        ds.borderDash = i === 5 ? [] : [6,3];
+      } else {
+        const isSelected = COMP_RADAR_MAP[selectedCompetitor] === i;
+        const isYolando = i === 5;
+        ds.borderWidth = isSelected ? 3.5 : (isYolando ? 1.5 : 0.8);
+        ds.pointRadius = isSelected ? 5 : (isYolando ? 2 : 1);
+        ds.backgroundColor = isSelected ? ds.borderColor + '20' : 'transparent';
+        ds.borderDash = isSelected ? [] : [6,3];
+      }
+    });
+    radarChart.update();
+  }
+}
+
+function renderCompetitive() {
+  const el = document.getElementById('tabContent');
+  el.innerHTML = `
+    <div class="grid-2" style="margin-bottom:20px;align-items:stretch;">
+      <div class="card" style="padding:24px;">
+        <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Capability Coverage</div>
+        <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:14px;">Click any row to compare across all views</div>
+        <div style="display:grid;grid-template-columns:110px 1fr 1fr 1fr 74px;gap:4px;padding:6px 10px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);border-bottom:2px solid var(--border);margin-bottom:4px;">
+          <div></div><div>Monitor</div><div>Recommend</div><div>Produce</div><div>Price</div>
+        </div>
+        ${[
+          ['Profound','profound','var(--purple)','<span class="dot dot-full"></span>10+ engines','<span class="dot dot-partial"></span>Agents','<span class="dot dot-partial"></span>$2K+/mo','$99-$5K+','$155M raised, $1B valuation, 700+ enterprise clients. G2 category leader. Deep data (10M+ daily prompts).','Agents product behind enterprise pricing. No multi-account management. Recurring bugs, steep learning curve in G2 reviews.'],
+          ['Otterly.ai','otterly','var(--teal)','<span class="dot dot-full"></span>7+ engines','<span class="dot dot-none"></span>GEO Audit','<span class="dot dot-none"></span>None','$29-$489','30K+ users, 4.9/5 G2, Gartner Cool Vendor 2025. Most accessible pricing and PLG motion.','Monitoring-only. No content generation or traffic attribution. Expensive add-on model for full engine coverage.'],
+          ['Daydream','daydream','var(--orange)','<span class="dot dot-full"></span>Managed','<span class="dot dot-full"></span>Full','<span class="dot dot-full"></span>Full','$15K/mo','Full-service managed execution. $21M raised. a16z featured.','Not SaaS — agency model. $15K/mo minimum. No direct data access. Creates dependency.'],
+          ['BrightEdge','brightedge','var(--blue)','<span class="dot dot-partial"></span>AI Cube','<span class="dot dot-partial"></span>SEO-based','<span class="dot dot-none"></span>None','$30-127K/yr','17+ years of SEO data, enterprise relationships. Unique AI Agent Insights.','AEO bolted onto legacy SEO. Prohibitively expensive for mid-market. Overkill for AEO-only needs.'],
+          ['HubSpot AEO','hubspot','var(--amber-dark)','<span class="dot dot-partial"></span>3 engines','<span class="dot dot-none"></span>Basic','<span class="dot dot-none"></span>None','$50/mo','Native CRM integration. 228K+ customers. Free AEO Grader. Already launched.','No content generation. Limited engine coverage. Monitoring-only, acquired tech (XFunnel).'],
+          ['Yolando','yolando','var(--green-dark)','<span class="dot dot-full"></span>4 engines','<span class="dot dot-full"></span>Prioritized','<span class="dot dot-full"></span>AI Studio','Mid-market','Full-stack: monitor + recommend + produce content. Proprietary citation model. 40+ specialized agents. Mid-market pricing.','12-person team, $8.5M raised. No CRM integration yet. 4 engines vs. Profound\'s 10+.'],
+        ].map(([name,key,color,c1,c2,c3,c4,detail,vuln]) => `
+          <div data-comp-cap="${key}" class="hover" onclick="selectCompetitor('${key}')" style="cursor:pointer;border-radius:10px;transition:background 0.1s;${name==='Yolando'?'background:var(--green-light);':''}">
+            <div style="display:grid;grid-template-columns:110px 1fr 1fr 1fr 74px;gap:4px;padding:10px;align-items:center;font-size:14px;color:var(--body-dark);border-bottom:1px solid var(--border);">
+              <div style="font-weight:600;color:${color};font-size:15px;">${name}</div>
+              <div>${c1}</div><div>${c2}</div><div>${c3}</div><div style="font-size:12px;font-weight:700;">${c4}</div>
+            </div>
+            <div class="expand-body">
+              <div style="padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                <div style="padding:10px;border-radius:8px;background:var(--blue-light);border:1px solid var(--blue-pale);">
+                  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:4px;">What they have</div>
+                  <div style="font-size:13px;color:var(--body-dark);line-height:1.5;">${detail}</div>
+                </div>
+                <div style="padding:10px;border-radius:8px;background:var(--red-light);border:1px solid #FECACA;">
+                  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--red);margin-bottom:4px;">Key vulnerability</div>
+                  <div style="font-size:13px;color:var(--body-dark);line-height:1.5;">${vuln}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="card" style="padding:14px 16px 10px;display:flex;flex-direction:column;">
+        <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:0;">Radar View</div>
+        <div style="flex:1;min-height:300px;"><canvas id="radarChart"></canvas></div>
+      </div>
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">Battlecards <span style="color:#6366F1;font-weight:600;font-size:14px;">(click to expand)</span></div>
+    <div class="grid-2">
+      ${[
+        ['Profound','profound','var(--purple)','Category leader. $155M raised, $1B valuation, 10+ AI engine coverage.','"They show enterprise charts. We give mid-market teams the content."','Profound gates execution behind $2K-$5K+/mo enterprise pricing. G2 reviews cite bugs, broken tracking, and steep learning curves. No multi-account management for agencies.','Deepest data (10M+ daily prompts), broadest coverage (10+ engines), Fortune 500 logos (Ramp, DocuSign, Figma). G2 category leader.','Prospect needs execution now at mid-market pricing. Team of 3-10 cannot absorb an enterprise dashboard.','Prospect plans to scale to enterprise in 12 months and needs Fortune 500 references.'],
+        ['Otterly.ai','otterly','var(--teal)','PLG leader. 30K+ users, 4.9/5 G2, Gartner Cool Vendor 2025.','"They show you the problem. We produce the fix."','Monitoring-only. No content generation, no traffic attribution, no step-by-step fixes. Expensive add-ons push real cost to $300+/mo.','Best-in-class ease of use. $29/mo entry point. Free trial, no credit card. European Search Awards 2026.','Prospect\'s SEO lead spends 3-5 hours/week manually checking AI chatbots. Needs execution, not another dashboard.','Prospect genuinely only needs a monitoring scorecard for board reporting at the lowest cost.'],
+        ['HubSpot AEO','hubspot','var(--amber-dark)','$50/mo via XFunnel acquisition. Native CRM integration. 228K+ customers.','"They are your monitoring dashboard. We are your execution engine."','No content generation. Limited engine coverage (3 engines). Monitoring-only with acquired technology. Do NOT position against — target buyers use HubSpot.','Native CRM integration ties AI visibility to pipeline. Already in 62% of target CRM installs. Free AEO Grader. Zero friction.','Prospect wants to improve AI visibility, not just see it. HubSpot shows the gap — Yolando closes it. Position as complementary.','Prospect genuinely only needs visibility metrics for board reporting. Or prospect is fully Microsoft-standardized.'],
+        ['Daydream','daydream','var(--orange)','AI-native agency. $21M raised. $15K/mo minimum retainer.','"Great if you want to outsource forever. We build internal capability."','Not SaaS. $15K/mo minimum. Customers lack direct data access. Creates agency dependency without knowledge transfer.','Full-service execution. Dedicated senior strategists. WndrCo and First Round Capital backing.','Prospect wants to build internal AEO capability. SaaS economics at $500-$3K/mo vs. $15K/mo retainer.','Prospect has budget and zero interest in building internal AEO capability. Wants fully managed.'],
+      ].map(([name,key,color,desc,line,ours,theirs,win,lose]) => `
+        <div data-comp-battle="${key}" class="card hover" onclick="selectCompetitor('${key}')" style="border-left:4px solid ${color};cursor:pointer;">
+          <div style="font-weight:800;font-size:16px;color:${color};">${name}</div>
+          <div style="font-size:15px;color:var(--body-dark);margin-bottom:10px;">${desc}</div>
+          <div style="font-size:16px;font-weight:700;color:${color};">${line}</div>
+          <div class="expand-hint">Click for full battlecard</div>
+          <div class="expand-body">
+            <div style="padding:16px;border-radius:12px;background:#F8FAFC;border:1px solid var(--border);">
+              <div style="margin-bottom:14px;">
+                <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">Our strongest argument</div>
+                <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${ours}</div>
+              </div>
+              <div style="margin-bottom:14px;">
+                <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:4px;">Their strongest argument</div>
+                <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${theirs}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="padding:12px;border-radius:8px;background:var(--green-light);border:1px solid #A7F3D0;">
+                  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">When we win</div>
+                  <div style="font-size:13px;color:var(--body-dark);line-height:1.5;">${win}</div>
+                </div>
+                <div style="padding:12px;border-radius:8px;background:var(--red-light);border:1px solid #FECACA;">
+                  <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--red);margin-bottom:4px;">When we lose</div>
+                  <div style="font-size:13px;color:var(--body-dark);line-height:1.5;">${lose}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> The positioning gap is clear: no mid-market-priced platform combines monitoring + recommendations + content production. Yolando\'s AI Writing Studio is the moat. Position as complementary to HubSpot (never competitive), and lead with execution depth over monitoring breadth.')}
+  `;
+
+  selectedCompetitor = null;
+  const ctx = document.getElementById('radarChart');
+  if (ctx) {
+    if (radarChart) radarChart.destroy();
+    radarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Monitoring Depth', 'Recommendations', 'Content Production', 'Mid-Market Pricing', 'Ease of Use'],
+        datasets: [
+          { label: 'Profound', data: [100, 60, 50, 20, 30], borderColor: '#8B5CF6', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [6,3], pointRadius: 3 },
+          { label: 'Otterly.ai', data: [75, 25, 5, 90, 95], borderColor: '#0891B2', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [6,3], pointRadius: 3 },
+          { label: 'Daydream', data: [80, 90, 95, 5, 70], borderColor: '#F97316', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [6,3], pointRadius: 3 },
+          { label: 'BrightEdge', data: [60, 40, 5, 5, 25], borderColor: '#2563EB', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [6,3], pointRadius: 3 },
+          { label: 'HubSpot AEO', data: [40, 20, 5, 95, 85], borderColor: '#D97706', backgroundColor: 'transparent', borderWidth: 1.5, borderDash: [6,3], pointRadius: 3 },
+          { label: 'Yolando', data: [70, 85, 90, 85, 80], borderColor: '#059669', backgroundColor: 'rgba(5,150,105,0.1)', borderWidth: 3, pointRadius: 4 },
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false, layout: { padding: 0 }, scales: { r: { beginAtZero: true, max: 100, ticks: { display: false }, grid: { color: '#E2E8F0' }, pointLabels: { font: { size: 11, weight: '700', family: 'Plus Jakarta Sans' }, color: '#1E293B' } } }, plugins: { legend: { position: 'right', align: 'center', labels: { font: { size: 10, weight: '600', family: 'Plus Jakarta Sans' }, color: '#1E293B', usePointStyle: true, padding: 6, boxWidth: 8 } } } }
+    });
+  }
+}
+
+// ═══ ICP + BUYING COMMITTEE ═══
+function renderICP() {
+  document.getElementById('tabContent').innerHTML = `
+    <div style="margin-bottom:14px;">
+      <div style="font-size:18px;font-weight:800;color:var(--navy);">Primary ICP</div>
+      <div style="font-size:13px;color:#6366F1;font-weight:600;margin-top:4px;">Click any signal type to expand</div>
+    </div>
+    <div class="grid-2" style="margin-bottom:12px;">
+      <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 18px;border-left:4px solid var(--purple);cursor:pointer;">
+        <div style="font-size:13px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:0.06em;">Firmographic</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">50-500 employee B2B SaaS, Series A-C, $5M-$100M ARR</div>
+        <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.6;">
+          <strong>Sweet spot:</strong> 100-300 employees, $10M-$50M ARR<br>
+          <strong>Industries:</strong> MarTech, developer tools, fintech, cybersecurity, HR tech, vertical SaaS<br>
+          <strong>Geography:</strong> US (primary), Canada (home market), UK (tertiary)<br>
+          <strong>Stage:</strong> Past PMF, actively investing in content marketing and demand gen<br>
+          <strong>Secondary:</strong> Digital marketing agencies serving B2B clients
+        </div></div>
+      </div>
+      <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 18px;border-left:4px solid var(--blue);cursor:pointer;">
+        <div style="font-size:13px;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;">Technographic</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">HubSpot CRM, Semrush/Ahrefs, content-forward CMS, no existing AEO tool</div>
+        <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.7;">
+          <div style="font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Required</div>
+          <strong>HubSpot CRM:</strong> 62% of SMB CRM installs. Highest-value AND most at-risk (HubSpot AEO at $50/mo)<br>
+          <strong>Semrush OR Ahrefs:</strong> Indicates SEO-mature team. Both launched AEO add-ons, creating awareness<br><br>
+          <div style="font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Complementary</div>
+          <strong>CMS:</strong> WordPress, Webflow, or Contentful — active content publishing<br>
+          <strong>GA4 + GSC:</strong> Near-universal, but GSC AI reports create new AEO awareness<br>
+          <strong>No dedicated AEO tool:</strong> 84% of companies not tracking — this is the market
+        </div></div>
+      </div>
+      <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 18px;border-left:4px solid var(--orange);cursor:pointer;">
+        <div style="font-size:13px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:0.06em;">Behavioral Triggers</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Eight signals that make an account "now"</div>
+        <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.7;">
+          <strong>Organic traffic declined 15%+</strong> in last 6 months (SimilarWeb, SEMrush)<br>
+          <strong>Series B/C funding</strong> within 90 days — fresh budget, growth pressure<br>
+          <strong>VP Marketing / Dir SEO hire</strong> in last 60 days — new leader audits stack<br>
+          <strong>Competitor in AI answers</strong> — prospect absent from ChatGPT/Perplexity<br>
+          <strong>LinkedIn post about AI search</strong> — active problem awareness<br>
+          <strong>Content production expanding</strong> — hiring writers, increasing blog frequency<br>
+          <strong>Google ranking drop</strong> — lost featured snippets, algorithm volatility<br>
+          <strong>Agency clients asking about AEO</strong> — secondary ICP trigger
+        </div></div>
+      </div>
+      <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 18px;border-left:4px solid var(--red);cursor:pointer;">
+        <div style="font-size:13px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:0.06em;">Anti-ICP: Walk Away</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Five disqualification criteria to save cycles</div>
+        <div class="expand-body"><div style="font-size:14px;line-height:1.7;color:var(--body-dark);">
+          <strong>Enterprise-locked:</strong> BrightEdge/Botify/Conductor contracts, 2,000+ employees<br>
+          <strong>No content investment:</strong> No blog, no SEO team, no organic content motion<br>
+          <strong>Sub-50 employees:</strong> Marketing team of 1-2, churn risk within 3-6 months<br>
+          <strong>E-commerce / DTC:</strong> Need product listing optimization, not content AEO<br>
+          <strong>Monitoring-only buyers:</strong> Only want a scorecard — better served by Otterly at $29/mo
+        </div></div>
+      </div>
+    </div>
+
+    <div style="padding:16px 20px;border-radius:12px;background:var(--amber-light);border:1px solid #FDE68A;margin-bottom:20px;font-size:15px;color:var(--body-dark);line-height:1.6;">
+      <strong>Yolando's differentiator is execution, not monitoring.</strong> The ICP must want to produce content, not just see dashboards. Buyers who only want monitoring have cheaper options (Otterly at $29/mo, HubSpot AEO at $50/mo). Yolando's price premium is justified by the AI Writing Studio — buyers must value execution.
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">The Buying Committee</div>
+    <div style="font-size:14px;color:var(--body);margin-bottom:14px;"><span style="color:#6366F1;font-weight:600;">Click any role for their pain point and value prop.</span></div>
+    <div class="grid-3" style="margin-bottom:4px;">
+      ${[
+        ['VP of Marketing','Budget Owner','green','How do I prove AI search drives pipeline?','Organic traffic — historically my best channel — is declining. I have no data on AI search to present to the CEO or board.','AI search is a measurable revenue channel: BirdseyePost data shows ChatGPT leads are worth 20% more and close 40% faster. Board-ready ROI metrics from day one.','<circle cx="20" cy="15" r="6.5" fill="white"/><ellipse cx="20" cy="33" rx="10" ry="8" fill="white"/>'],
+        ['Dir of SEO / Organic','Champion','blue','How do I fix what I cannot measure?','I spend 3-5 hours per week manually checking ChatGPT. No tool gives me both monitoring AND content recommendations.','Yolando eliminates manual drudgery AND produces content. Proprietary citation model identifies patterns generic SEO best practices miss. You become the hero who solved it.','<circle cx="20" cy="14" r="6.5" fill="white"/><ellipse cx="20" cy="33" rx="10" ry="8" fill="white"/><rect x="26" y="20" width="6" height="8" rx="1" fill="white"/>'],
+        ['Dir of Marketing Ops','Technical Eval','purple','Does this fit our stack?','No AEO tool integrates with HubSpot. I cannot attribute AI-sourced leads to pipeline.','Fast deployment, API-ready, designed to complement HubSpot and existing SEO tools. Time-to-first-value in days, not months.','<circle cx="20" cy="14.5" r="7" fill="white"/><ellipse cx="20" cy="33" rx="10" ry="8" fill="white"/><circle cx="20" cy="14.5" r="3.5" fill="#0F172A"/>'],
+        ['CFO / VP Finance','Blocker','red','Why buy a tool in a category that is 18 months old?','We already have Semrush AEO at $99/mo and HubSpot AEO at $50/mo. Why add another tool?','Compare to alternatives: AEO specialist at $100-200K/yr or agency at $15K/mo. BirdseyePost data: ChatGPT leads worth 20% more. Those tools monitor — Yolando produces.','<circle cx="20" cy="15" r="6.5" fill="white"/><ellipse cx="20" cy="33" rx="10" ry="8" fill="white"/><path d="M16 28l4-4 4 4" stroke="#0F172A" stroke-width="2" fill="none"/>'],
+        ['Content Mktg Manager','End User','amber','Will AI content match our brand voice?','I do not know what drives AI citation. I am spending weeks on content optimized for SEO signals that AI models may not cite.','AI Writing Studio produces publish-ready content the team reviews and refines — not writing from scratch. Clear direction on what to create and why.','<circle cx="20" cy="14" r="6" fill="white"/><ellipse cx="20" cy="33" rx="10" ry="8" fill="white"/><path d="M18 18c2-2 4 0 4 0" stroke="#0F172A" stroke-width="1.5" fill="none"/>'],
+        ['Growth Mktg Manager','End User','gray','Will this add work or reduce it?','I wear multiple hats and cannot absorb another monitoring tool that creates more work without producing output.','Yolando is the AEO function in a box. Monitors, recommends, AND produces content. Minimal ramp time. All-in-one, not another dashboard.','<circle cx="20" cy="15" r="6.5" fill="white"/><ellipse cx="20" cy="33" rx="10" ry="8" fill="white"/><rect x="16" y="24" width="8" height="6" rx="1" fill="#0F172A"/>'],
+      ].map(([role,type,color,question,pain,vp,avatar]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:18px;cursor:pointer;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <svg width="42" height="42" viewBox="0 0 40 40" style="flex-shrink:0;"><circle cx="20" cy="20" r="20" fill="var(--navy)"/>${avatar}</svg>
+            <div><div style="display:flex;align-items:center;gap:10px;"><div style="font-weight:800;font-size:15px;color:var(--navy);">${role}</div>${tag(type,color)}</div></div>
+          </div>
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:4px;">Pain Point</div>
+          <div style="font-size:14px;color:var(--body-dark);font-style:italic;line-height:1.55;">"${pain}"</div>
+          <div class="expand-hint">Click for value prop</div>
+          <div class="expand-body">
+            <div style="padding:14px;border-radius:10px;background:var(--blue-light);border:1px solid var(--blue-pale);">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:6px;">Their question</div>
+              <div style="font-size:14px;color:var(--body-dark);font-weight:600;margin-bottom:12px;">"${question}"</div>
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:6px;">Yolando value prop</div>
+              <div style="font-size:14px;color:var(--body-dark);line-height:1.55;">${vp}</div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> The Dir of SEO is the door in — they feel the pain daily. The VP Marketing controls the budget. At companies with 50-200 employees, the CEO/COO is also in the room. Anti-ICP is critical: qualifying out monitoring-only buyers early saves cycles and prevents churn.')}
+  `;
+}
+
+// ═══ ACCOUNT INTELLIGENCE ═══
+function renderAccountIntel() {
+  document.getElementById('tabContent').innerHTML = `
+    <div class="card" style="padding:24px;border-left:4px solid var(--blue);margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+        <div style="width:30px;height:30px;border-radius:8px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;">1</div>
+        <div style="font-size:18px;font-weight:800;color:var(--navy);">Signal Sourcing: How We Find Target Accounts</div>
+      </div>
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.7;margin-top:10px;">
+        Three parallel sourcing methods. Target: 50 accounts in Month 1, prioritized into 3 tiers. A 12-person startup with founder-led sales cannot run broad-based demand gen. Every outreach must be targeted, personalized, and signal-driven.
+      </div>
+    </div>
+    <div class="grid-3" style="margin-bottom:20px;">
+      ${[
+        ['LinkedIn Sales Navigator','20 accounts','var(--blue)','Saved search: B2B SaaS, 50-500 employees, Series A-C, VP Marketing or Dir of SEO title, posted about AI search in last 30 days, North America.'],
+        ['Crunchbase Funding Alerts','15 accounts','var(--green-dark)','Series B/C B2B SaaS rounds closed in last 90 days ($15M-$60M raised), cross-referenced with SimilarWeb for declining organic traffic.'],
+        ['Yolando Competitive Gap','15 accounts','var(--orange)','Yolando\'s own platform identifies B2B SaaS companies whose competitors are in ChatGPT but who are absent. Generate prospect-specific AI visibility audit screenshots for outreach.'],
+      ].map(([source,count,color,desc]) => `
+        <div class="card" style="padding:18px;border-top:3px solid ${color};">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px;">${source}</div>
+          <div style="font-size:14px;font-weight:700;color:${color};margin-bottom:8px;">${count}</div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Seven Intelligence Signals</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:4px;">Each signal is scored. The combination of signals determines tier assignment and outreach priority.</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click any signal for source and evidence</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
+      ${[
+        ['Organic traffic declined 15%+','SimilarWeb, SEMrush domain analytics','High','Firmographic','59% of B2B SaaS brands report flat or down organic traffic in 2026'],
+        ['Series B/C funding in last 90 days','Crunchbase, PitchBook','High','Behavioral','Fresh budget + investor growth pressure. Series B median raise is $15M-$60M'],
+        ['VP Marketing or Dir SEO hired in last 60 days','LinkedIn Jobs, Greenhouse','High','Behavioral','New leaders audit the stack in first 90 days'],
+        ['Competitor visible in AI answers, prospect absent','Yolando\'s own monitoring','High','Technographic','Demonstrates product value in the outreach itself'],
+        ['LinkedIn post about AI search / AEO in last 30 days','LinkedIn monitoring, Google Alerts','Medium','Behavioral','Active problem awareness without a solution'],
+        ['Content production expanding','Job postings, blog frequency','Medium','Behavioral','Investing in the exact asset type that needs AEO optimization'],
+        ['Agency clients asking about AEO','Agency blog posts, LinkedIn','Medium','Behavioral','Secondary ICP trigger — agencies add $500-$2K/mo per client for AEO'],
+      ].map(([signal,source,urgency,type,evidence]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:14px 18px;cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:15px;font-weight:700;color:var(--navy);">${signal}</div>
+            <div style="display:flex;gap:6px;">${tag(urgency, urgency==='High'?'red':'amber')} ${tag(type, type==='Firmographic'?'purple':type==='Technographic'?'blue':'green')}</div>
+          </div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.6;padding-top:8px;">
+            <strong>Observable via:</strong> ${source}<br>
+            <strong>Evidence:</strong> ${evidence}
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Tier 1 Accounts: Fully Profiled</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:4px;">Four accounts scored, researched, and outreach-ready with per-persona creative variables, email sequences, LinkedIn notes, and phone scripts.</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click any account for outreach details</div>
+    <div class="grid-2" style="margin-bottom:4px;">
+      ${[
+        ['Unbounce','Landing page builder. 185-250 employees, ~$52M ARR. Content-driven GTM. Competitors (Instapage, Leadpages) visible in AI answers.','var(--purple)','Content-led growth + "best landing page builder" competitive battleground in AI search'],
+        ['Vidyard','B2B video platform. 250-350 employees. Post-Loom/Atlassian ($975M) acquisition — competitor dominates AI recommendations. VP Marketing vacant.','var(--blue)','Existential competitive threat from Loom in AI discovery channel'],
+        ['Chili Piper','Revenue ops / scheduling. 200-300 employees, Series B ($54M). Built speed-to-lead category. Calendly dominates AI recommendations.','var(--orange)','Invented the category conversation — AI engines may synthesize without attribution'],
+        ['Ada','AI customer service. 200-500 employees, Series C ($190.5M). Zendesk and Intercom dominate AI answers. Repositioning from chatbot to AI Agent.','var(--green-dark)','Brand repositioning must be reflected in AI engines to succeed'],
+      ].map(([name,desc,color,hook]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 20px;border-left:4px solid ${color};cursor:pointer;">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);">${name}</div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;line-height:1.55;">${desc}</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.6;padding-top:10px;border-top:1px solid var(--border);margin-top:8px;">
+            <strong>Primary outreach hook:</strong> ${hook}<br><br>
+            <strong>Outreach package includes:</strong> 5 creative variables per account, 4 persona-specific emails (budget owner, champion, technical evaluator, end user), 4 LinkedIn connection notes, and phone scripts with objection handling.
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Buying Committee Mapping</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:12px;">Every Tier 1 account gets a buying committee map before outreach begins. The committee at growth-stage B2B SaaS (50-200 employees) is smaller and faster-moving than enterprise — 5-8 stakeholders, with the CEO/COO often involved.</div>
+    <div class="card" style="padding:24px;margin-bottom:16px;">
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:0;">
+        <div></div>
+        <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;">
+          ${['VP of Marketing','Dir of SEO','Dir of Mktg Ops','CFO / VP Finance'].map((role,i) => `
+            <div style="text-align:center;padding:10px 8px;border-radius:10px;background:${['var(--green-light)','var(--blue-light)','var(--purple-light)','var(--red-light)'][i]};border:1px solid ${['#A7F3D0','var(--blue-pale)','#DDD6FE','#FECACA'][i]};">
+              <div style="font-size:13px;font-weight:700;color:var(--navy);">${role}</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px;">${['Budget Owner','Champion','Tech Evaluator','Blocker'][i]}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:0;margin-top:14px;">
+        <div style="font-size:13px;font-weight:700;color:var(--muted);padding-top:10px;">Research</div>
+        <div style="padding:12px 16px;border-radius:10px;background:#F8FAFC;border:1px solid var(--border);font-size:14px;color:var(--body-dark);line-height:1.6;">
+          LinkedIn search for each role at the target company. Confirm title, tenure (new hires in last 60 days get flagged as high-urgency), and recent content activity about AI search or organic traffic. Cross-reference with job postings to detect vacancies (e.g., Vidyard VP Marketing vacant, Ada CMO departed).
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:0;margin-top:10px;">
+        <div style="font-size:13px;font-weight:700;color:var(--muted);padding-top:10px;">Entry Point</div>
+        <div style="padding:12px 16px;border-radius:10px;background:var(--blue-light);border:1px solid var(--blue-pale);font-size:14px;color:var(--body-dark);line-height:1.6;">
+          <strong>Preferred:</strong> Director of SEO (Champion) — feels the AI visibility pain daily, spends 3-5 hours/week manually checking chatbots. They become the internal advocate.<br>
+          <strong>Alternate:</strong> VP of Marketing (Budget Owner) — if no Dir of SEO exists, or at smaller companies where marketing leadership owns SEO directly.<br>
+          <strong>Never cold-outreach:</strong> CFO (Blocker) — enters the deal late. Arm the champion with blocker-ready materials instead.
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:0;margin-top:10px;">
+        <div style="font-size:13px;font-weight:700;color:var(--muted);padding-top:10px;">Multi-Threading</div>
+        <div style="padding:12px 16px;border-radius:10px;background:#F8FAFC;border:1px solid var(--border);font-size:14px;color:var(--body-dark);line-height:1.6;">
+          After the champion is engaged, connect with 2-3 additional committee members via LinkedIn. This is not outbound — it is warming the committee so the champion is not selling alone internally. Each persona gets a different message angle: revenue impact for VP Marketing, stack fit for Marketing Ops, cost comparison for CFO.
+        </div>
+      </div>
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> Every outreach uses the product as the hook. Yolando\'s own monitoring generates prospect-specific AI visibility screenshots that make the problem viscerally real. This is not generic cold email — it is data-driven, personalized outreach using the product itself. The buying committee map ensures the champion is never selling alone internally.')}
+  `;
+}
+
+// ═══ SCORING + TIERING ═══
+function renderScoring() {
+  document.getElementById('tabContent').innerHTML = `
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card" style="padding:24px;">
+        <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">Scoring Model: 7 Weighted Signals</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-bottom:16px;">Each account scored 0-100 based on observable signals. Weights reflect what correlates with deal urgency for a founder-led, education-heavy sales motion.</div>
+        <div id="scoringCalc"></div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;background:var(--blue-light);border:1px solid var(--blue-pale);">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:4px;">Interactive: click signals to calculate a score</div>
+          <div style="font-size:22px;font-weight:800;color:var(--navy);" id="scoreTotal">Score: 0 / 100</div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;" id="scoreTier">Tier 3: Awareness Only</div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:12px;">Tier Definitions</div>
+          ${[
+            ['Tier 1: Active Pursuit','50+','gold','Score 50+. Highest-urgency accounts with multiple signals. Founder-led personalized outreach. 15 accounts max (founder capacity).'],
+            ['Tier 2: Signal Nurture','25-49','silver','Score 25-49. One or two signals present. Content-based nurture + monitoring for signal changes. Promote to Tier 1 on trigger.'],
+            ['Tier 3: Awareness Only','0-24','bronze','Score below 25. Matches firmographic ICP but no behavioral signals yet. Category education content only. Monitor for triggers.'],
+          ].map(([name,range,tier,desc]) => `
+            <div style="padding:10px 14px;border-radius:10px;background:var(--${tier}-light);border:1px solid var(--${tier});margin-bottom:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="font-size:15px;font-weight:700;color:var(--navy);">${name}</div>
+                <span style="font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;background:var(--${tier});color:white;">${range}</span>
+              </div>
+              <div style="font-size:13px;color:var(--body-dark);margin-top:4px;line-height:1.5;">${desc}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Example: Signal Profile to Score to Tier</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:4px;">Two of the four Tier 1 accounts, showing how signals map to scores.</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click either account for the full signal breakdown</div>
+    <div class="grid-2" style="margin-bottom:16px;">
+      <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 20px;border-left:4px solid var(--purple);cursor:pointer;">
+        <div style="font-size:16px;font-weight:700;color:var(--navy);">Unbounce</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Score: 70/100 — Tier 1: Active Pursuit</div>
+        <div class="expand-body"><div style="font-size:13px;color:var(--body-dark);line-height:1.7;padding-top:10px;border-top:1px solid var(--border);margin-top:8px;">
+          <strong>Competitor in AI answers (25 pts):</strong> Instapage and Leadpages visible in ChatGPT for "best landing page builder." <span style="color:var(--green-dark);font-weight:600;">+25</span><br>
+          <strong>Content-driven GTM at risk (15 pts):</strong> Entire acquisition engine is inbound content. <span style="color:var(--green-dark);font-weight:600;">+15</span><br>
+          <strong>No AEO tooling (10 pts):</strong> SEMrush and GA4 only — confirmed stack gap. <span style="color:var(--green-dark);font-weight:600;">+10</span><br>
+          <strong>HubSpot user (10 pts):</strong> Integration partner — confirmed. <span style="color:var(--green-dark);font-weight:600;">+10</span><br>
+          <strong>AI-fluent product (10 pts):</strong> Smart Traffic, Smart Copy — understands AI shift. <span style="color:var(--green-dark);font-weight:600;">+10</span><br>
+          <strong>Recent funding (0 pts):</strong> No new funding — efficiency mode. <span style="color:var(--muted);font-weight:600;">+0</span><br>
+          <strong>New marketing leadership (0 pts):</strong> No confirmed recent hire. <span style="color:var(--muted);font-weight:600;">+0</span><br>
+          <div style="margin-top:8px;padding:8px 12px;border-radius:8px;background:#FEF9C3;border:1px solid #CA8A04;font-weight:700;color:#CA8A04;">Total: 70/100 — Tier 1: Active Pursuit</div>
+        </div></div>
+      </div>
+      <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 20px;border-left:4px solid var(--orange);cursor:pointer;">
+        <div style="font-size:16px;font-weight:700;color:var(--navy);">Chili Piper</div>
+        <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Score: 65/100 — Tier 1: Active Pursuit</div>
+        <div class="expand-body"><div style="font-size:13px;color:var(--body-dark);line-height:1.7;padding-top:10px;border-top:1px solid var(--border);margin-top:8px;">
+          <strong>Competitor in AI answers (25 pts):</strong> Calendly dominates AI recommendations for scheduling/routing. <span style="color:var(--green-dark);font-weight:600;">+25</span><br>
+          <strong>Content-driven GTM at risk (15 pts):</strong> Built speed-to-lead category with extensive content. <span style="color:var(--green-dark);font-weight:600;">+15</span><br>
+          <strong>No AEO tooling (10 pts):</strong> No AEO platform or role detected. <span style="color:var(--green-dark);font-weight:600;">+10</span><br>
+          <strong>HubSpot user (10 pts):</strong> Certified HubSpot integration partner. <span style="color:var(--green-dark);font-weight:600;">+10</span><br>
+          <strong>Thought leadership risk (5 pts):</strong> AI engines may synthesize speed-to-lead content without attribution. <span style="color:var(--green-dark);font-weight:600;">+5</span><br>
+          <strong>Recent funding (0 pts):</strong> Series B was 2021 — no recent round. <span style="color:var(--muted);font-weight:600;">+0</span><br>
+          <strong>New marketing leadership (0 pts):</strong> No recent hire detected. <span style="color:var(--muted);font-weight:600;">+0</span><br>
+          <div style="margin-top:8px;padding:8px 12px;border-radius:8px;background:#FEF9C3;border:1px solid #CA8A04;font-weight:700;color:#CA8A04;">Total: 65/100 — Tier 1: Active Pursuit</div>
+        </div></div>
+      </div>
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> The scoring weights are starting hypotheses. After 90 days, recalibrate based on which signals correlated with deals that actually moved. The founder can handle 15 Tier 1 accounts simultaneously — more requires an AE hire.')}
+  `;
+
+  // Build interactive scoring calculator
+  const signals = [
+    ['Competitor visible in AI answers', 25],
+    ['Organic traffic declined 15%+', 15],
+    ['Content-driven GTM at risk', 15],
+    ['Series B/C funding in last 90 days', 10],
+    ['No existing AEO tooling', 10],
+    ['HubSpot CRM user', 10],
+    ['New VP Marketing / Dir SEO hire', 10],
+    ['LinkedIn post about AI search', 5],
+  ];
+  const calc = document.getElementById('scoringCalc');
+  calc.innerHTML = signals.map(([name, pts], i) => `
+    <div class="score-signal" onclick="toggleSignal(this, ${pts})" data-pts="${pts}">
+      <div class="score-check"></div>
+      <div class="score-signal-name">${name}</div>
+      <div class="score-signal-pts">+${pts}</div>
+    </div>
+  `).join('');
+}
+
+function toggleSignal(el, pts) {
+  el.classList.toggle('checked');
+  const check = el.querySelector('.score-check');
+  check.innerHTML = el.classList.contains('checked') ? '✓' : '';
+  let total = 0;
+  document.querySelectorAll('.score-signal.checked').forEach(s => { total += parseInt(s.dataset.pts); });
+  document.getElementById('scoreTotal').textContent = `Score: ${total} / 100`;
+  const tier = total >= 50 ? 'Tier 1: Active Pursuit' : total >= 25 ? 'Tier 2: Signal Nurture' : 'Tier 3: Awareness Only';
+  document.getElementById('scoreTier').textContent = tier;
+}
+
+// ═══ MESSAGING FRAMEWORK ═══
+function renderMessaging() {
+  document.getElementById('tabContent').innerHTML = `
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Layer 1: Market Narrative</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:4px;">The universal story that works across every audience. Four parts build the argument.</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click any card to expand the full narrative</div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div>
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:18px 20px;border-left:4px solid var(--red);margin-bottom:12px;cursor:pointer;">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">The Problem</div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Traditional search — the backbone of B2B discovery — is structurally collapsing.</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;padding-top:8px;">AI Overviews appear on 48% of Google queries. Zero-click rates hit 65-70%. 51% of B2B buyers start research in AI chatbots, up from 29% just eleven months ago. Your content still ranks on Google, but an accelerating share of your buyers never see those results.</div></div>
+        </div>
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:18px 20px;border-left:4px solid var(--amber-dark);cursor:pointer;">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">The Consequence</div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">The gap between awareness and action is where pipeline leaks.</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;padding-top:8px;">94% of CMOs plan to increase AEO investment, but only 16% actually track AI visibility. The tools that exist either show you charts (monitoring-only at $29-$489/mo), require enterprise budgets ($2K-$15K+/mo), or demand you figure out the fix yourself. 84% of companies are stuck between knowing the problem exists and doing anything about it.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:18px 20px;border-left:4px solid var(--green);margin-bottom:12px;cursor:pointer;">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">The Solution</div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Yolando closes the execution gap. Monitor → Recommend → Produce → Get Cited.</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;padding-top:8px;">Monitor visibility across ChatGPT, Claude, Perplexity, and Gemini. Tell teams exactly what to change. Produce the content that earns citations through 40+ specialized AI agents and a proprietary citation model trained on millions of webpages. One platform instead of stacking monitoring tools, agencies, and guesswork.</div></div>
+        </div>
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:18px 20px;border-left:4px solid var(--blue);cursor:pointer;">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);">The Differentiator</div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Every competitor stops at monitoring. Yolando closes the loop with execution.</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;padding-top:8px;">Otterly monitors but cannot produce content. HubSpot AEO monitors through 3 engines with no execution. Profound gates execution behind enterprise pricing. Semrush and Ahrefs treat AEO as an add-on. No mid-market-priced platform combines monitoring, recommendations, AND content production. That is the gap Yolando fills.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Layer 2: Positioning Angles</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:4px;">Four angles, each targeting a specific persona. Click for proof points and competitive gaps.</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click any angle for full detail</div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      ${[
+        ['From Invisible to Cited','var(--green-dark)','Dir of SEO (Champion)','Yolando does not just reveal where your brand is invisible — it produces the content that makes you visible.','No mid-market competitor combines monitoring with content production. G2 reviews consistently cite the actionability gap as the #1 complaint.','primary'],
+        ['AI Search as Revenue Channel','var(--blue)','VP of Marketing (Budget Owner)','AI search is not a vanity metric — it is a pipeline channel converting at 4.4x organic search.','No competitor has published quantified revenue attribution connecting AI visibility to pipeline. BirdseyePost: 20% higher revenue, 40% faster close.','primary'],
+        ['The AEO Team You Cannot Hire','var(--orange)','Content / Growth Mktg (End Users)','40+ specialized agents deliver the output of a dedicated AEO team without the $100-200K salary or 6-month ramp.','Monitoring-only tools create more work for stretched teams. Daydream offers execution but at $15K/mo agency retainer. Yolando combines both as self-serve SaaS.','secondary'],
+        ['Full-Stack at Mid-Market Pricing','var(--purple)','CFO / Marketing Ops (Blocker + Evaluator)','Complete AEO workflow at mid-market pricing without enterprise procurement or 6-month sales cycles.','Structural pricing gap: Otterly $189-$489/mo (monitoring only). Profound $399/mo (3 engines, limited). Full execution requires $2K+/mo enterprise tier.','secondary'],
+      ].map(([name,color,persona,vp,gap,designation]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:18px 20px;border-left:4px solid ${color};cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:16px;font-weight:700;color:${color};">${name}</div>
+            ${tag(designation,'blue')}
+          </div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">Target: ${persona}</div>
+          <div style="font-size:15px;color:var(--body-dark);font-weight:500;">${vp}</div>
+          <div class="expand-hint">Click for competitive gap + proof points</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;">
+            <div style="padding:10px 14px;border-radius:8px;background:#F8FAFC;border:1px solid var(--border);">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">Competitive gap this angle exploits</div>
+              ${gap}
+            </div>
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Layer 3: Objection Handling</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:4px;">Five objections that will surface in every deal. Each includes when to concede.</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click any objection for reframe and concession</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:4px;">
+      ${[
+        ['We already have Semrush with AI Visibility for $99/mo','Semrush monitors the problem. Yolando monitors AND produces the fix. The comparison is not the subscription cost — it is $99/mo for data you cannot act on vs. a platform that turns data into pipeline.','If the team already has a dedicated AEO specialist who can independently translate monitoring data into content strategy, Semrush may be sufficient.'],
+        ['HubSpot AEO is $50/mo and ties into our CRM','HubSpot AEO is your monitoring dashboard. Yolando is your execution engine. They work together — HubSpot shows the gap, Yolando closes it. Position as complementary, never competitive.','If the prospect genuinely only needs a visibility scorecard for board reporting and has no intent to produce AEO-optimized content.'],
+        ['AEO is too new. This could be a fad.','This is not a tactic — it is a structural shift. 51% of B2B buyers start in AI chatbots (up from 29% in 11 months). $200M+ invested including a $1B unicorn. G2 category grew 2,000% in one year. The question is not whether AI search matters but how far behind you will be when you start.','If the prospect\'s buyers demonstrably do not use AI search for their product category.'],
+        ['We do not have bandwidth. Our team is stretched.','Yolando reduces workload — it produces content, not more recommendations. 40+ agents handle research, analysis, and drafting. Your team reviews and publishes instead of writing from scratch. The Director of SEO currently spending 3-5 hours/week manually checking chatbots gets that time back as execution.','If the team cannot allocate 2-3 hours per week to review content, they may need a fully managed service like Daydream.'],
+        ['Profound is the category leader with $155M raised. Why Yolando?','Profound is built for Fortune 500 with enterprise budgets. Your team of 7 needs results this quarter, not a 6-month procurement cycle. Profound\'s $99 Starter is ChatGPT-only with 50 prompts. Real execution requires $2K+/mo. The question is value-for-stage, not biggest brand.','If the prospect plans to scale to enterprise in 12 months and needs Fortune 500 references.'],
+      ].map(([objection,reframe,concede]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:14px 18px;cursor:pointer;">
+          <div style="font-size:15px;font-weight:700;color:var(--red);margin-bottom:4px;">"${objection}"</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;">
+            <div style="padding:10px 14px;border-radius:8px;background:var(--green-light);border:1px solid #A7F3D0;margin-bottom:10px;">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">Reframe</div>
+              ${reframe}
+            </div>
+            <div style="padding:10px 14px;border-radius:8px;background:var(--amber-light);border:1px solid #FDE68A;">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--amber-dark);margin-bottom:4px;">When to concede</div>
+              ${concede}
+            </div>
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> The messaging hierarchy is: execution > monitoring > data. Lead with what Yolando produces, not what it tracks. Position as complementary to HubSpot (never competitive). The BirdseyePost proof point (20% higher revenue, 40% faster close) is the single strongest evidence — use it in every conversation.')}
+  `;
+}
+
+// ═══ PROGRAMS + CHANNELS ═══
+function renderPrograms() {
+  let view = 'primary';
+  const render = () => {
+    document.getElementById('tabContent').innerHTML = `
+    <div class="toggle-group">
+      <button class="toggle-btn ${view==='primary'?'active':''}" onclick="window.view='primary';window.render();">Primary Channels</button>
+      <button class="toggle-btn ${view==='ecosystem'?'active':''}" onclick="window.view='ecosystem';window.render();">Ecosystem + Events</button>
+      <button class="toggle-btn ${view==='partners'?'active':''}" onclick="window.view='partners';window.render();">Partnerships</button>
+      <button class="toggle-btn ${view==='avoid'?'active':''}" onclick="window.view='avoid';window.render();">Channels to Avoid</button>
+    </div>
+
+    ${view === 'primary' ? `
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">GTM Motion: Hybrid (Education-Led Inbound + Sales-Assisted)</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:16px;">Non-paid, earned channels first. A 12-person startup with no marketing team needs channels a founder can execute solo before the first growth hire joins.</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:4px;">
+      ${[
+        ['LinkedIn Founder-Led Thought Leadership','var(--blue)','Immediate','High time / Low budget','2-4 weeks to engagement, 6-10 weeks to first inbound demos','Post 4-5x/week: data-driven posts using Yolando platform data, BirdseyePost case study posts, contrarian takes on SEO, "What AI says about [brand]" hooks, category-defining posts. Text-first, 1-2 carousels/week. No competitor runs founder-led social growth in AEO.','Target: 500+ new relevant followers/mo, 3%+ engagement rate, 5-10 inbound demo requests/mo by month 3'],
+        ['SEO/AEO Content Marketing (Dogfooding)','var(--green-dark)','Immediate','High time / Low budget','4-6 months for SEO ranking, weeks-months for AI citations','Three pillars: (1) Comparison pages (Yolando vs Profound, vs Otterly, HubSpot AEO alternatives), (2) Education guides (What is AEO, How to optimize for ChatGPT), (3) Data studies (AI visibility benchmarks for 200 B2B SaaS brands). All optimized via Yolando\'s own AEO platform. The product IS the growth engine.','Target: 5,000 monthly visits by month 6, 1-2% blog-to-demo conversion'],
+        ['G2 Marketplace Presence','var(--teal)','Immediate','Med time / Low budget','Grid eligibility (10+ reviews) within 2-3 months','Review generation from 4 existing customers (Humanly.io, Order.co, Pieces.app, Bridge Marketplace). Emphasize execution differentiator vs. monitoring-only competitors. G2 AEO category grew 2,000% — buyers are comparing vendors here now.','Target: 10+ reviews in 3 months, 4.5+/5.0 rating'],
+        ['Signal-Triggered Personalized Outreach','var(--orange)','Immediate','Med time / Low budget','First meetings within 1-2 weeks, pipeline in 4-6 weeks','Three-email sequence from Matt\'s personal email. Hook: prospect-specific AI visibility screenshot from Yolando. 20-30 personalized emails/week (quality over volume). Signals: funding alerts, traffic decline, competitor in AI answers, new marketing leader.','Target: 15-25% reply rate, 40-50% demo booking from replies'],
+        ['Community Engagement','var(--purple)','Month 2-3','Med time / Low budget','Reputation in 4-8 weeks, pipeline in 2-3 months','Value-first participation in Traffic Think Tank, Exit Five, Superpath, Online Geniuses. Answer AEO questions with genuine expertise. Share anonymized Yolando data. 30-45 min/day across communities. No competitor has built community-led growth in AEO.','Target: 3-5 inbound referrals/week by month 3'],
+      ].map(([name,color,phase,effort,timeline,strategy,metrics]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 20px;border-left:4px solid ${color};cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:16px;font-weight:700;color:var(--navy);">${name}</div>
+            <div style="display:flex;gap:6px;">${tag(phase,phase==='Immediate'?'green':'amber')} ${tag(effort,'gray')}</div>
+          </div>
+          <div style="font-size:14px;color:var(--body-dark);margin-top:4px;">Results timeline: ${timeline}</div>
+          <div class="expand-hint">Click for strategy + metrics</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.65;padding-top:10px;">
+            <div style="margin-bottom:10px;padding:10px 14px;border-radius:8px;background:#F8FAFC;border:1px solid var(--border);">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:4px;">Content Strategy</div>
+              ${strategy}
+            </div>
+            <div style="padding:10px 14px;border-radius:8px;background:var(--green-light);border:1px solid #A7F3D0;">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">Success Metrics</div>
+              ${metrics}
+            </div>
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+    ` : view === 'ecosystem' ? `
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Conferences + Events</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:12px;">Attend for networking, pursue speaking slots where appropriate. No booth sponsorships — a 12-person startup invests in presence, not booths.</div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      ${[
+        ['SEO Week','NYC, April 27-30. Four-day event with daily themes including AI search and AI-powered discovery. Yolando\'s exact ICP attends. Pursue a speaking slot for the AEO/GEO track.','var(--blue)','Speaking opportunity'],
+        ['Ahrefs Evolve','San Diego, Oct 12-13. Adding AEO, GEO, and AI SEO to agenda. Ahrefs users are Yolando\'s target buyers. Attend for networking — Ahrefs is a competitor so speaking is unlikely, but the audience is high-value.','var(--teal)','Attend + network'],
+        ['AEO Conf','Hosted by AirOps, Graphite, and Webflow. Dedicated AEO conference from adjacent ecosystem players. Good for ecosystem positioning and meeting potential co-marketing partners (Webflow integration opportunity).','var(--purple)','Speaking opportunity'],
+        ['GEO Conference','NYC, December 4. Built around generative engine optimization for search leaders. Slightly above Yolando\'s primary ICP (Fortune 500 focus), but strong for brand building and positioning as a category authority.','var(--orange)','Attend + network'],
+      ].map(([event,desc,color,mode]) => `
+        <div class="card" style="padding:16px 18px;border-left:4px solid ${color};">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-size:16px;font-weight:700;color:var(--navy);">${event}</div>
+            ${tag(mode, mode.includes('Speaking')?'green':'blue')}
+          </div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Communities</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:12px;">Consistent, value-first participation. No competitor has built community-led growth in AEO — this channel is uncontested.</div>
+    <div class="grid-2" style="margin-bottom:4px;">
+      ${[
+        ['Traffic Think Tank','Semrush-owned premium SEO community. Director of SEO personas — the champion role in Yolando\'s buying committee — actively discuss tools and strategies here. Worth the membership investment.','var(--blue)'],
+        ['Exit Five','Dave Gerhardt\'s B2B marketing leaders community. VP Marketing personas — the budget owner role. 30+ local chapters, virtual coffee chats, active podcast. Reaches the decision-maker directly.','var(--green-dark)'],
+        ['Superpath','B2B/SaaS content marketers community. Content Marketing Manager personas — the end user role. The content execution angle of Yolando\'s AI Writing Studio is most relevant to this audience.','var(--purple)'],
+        ['Online Geniuses','Large Slack community for digital marketers. Broader audience but active AEO/GEO discussions. Lower-effort, value-first participation to build awareness among practitioners.','var(--orange)'],
+      ].map(([community,desc,color]) => `
+        <div class="card" style="padding:16px 18px;border-left:4px solid ${color};">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">${community}</div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+    ` : view === 'partners' ? `
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">Partnership Strategy</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:4px;">
+      ${[
+        ['Agency Partner Program','must_have','20% recurring referral commission. White-label reporting + partner portal. 13+ specialized GEO agencies have emerged, and no competitor has a robust agency channel program. Each agency with 5-15 relevant clients becomes a sales multiplier without adding headcount. Otterly.ai recently launched an Agency Partner Program (20%/12-month commission) — Yolando must match or exceed this to compete for agency adoption.','var(--green-dark)'],
+        ['HubSpot App Marketplace','must_have','HubSpot\'s marketplace is open to third-party apps including those that overlap with HubSpot features — thousands of apps are listed. A Yolando listing provides discovery by 228K+ HubSpot customers, turns HubSpot from competitive threat to distribution channel, and positions Yolando as the execution complement to HubSpot AEO\'s monitoring. No pure-play AEO tool has a marketplace listing yet — first-mover advantage.','var(--blue)'],
+        ['G2 Marketplace Listing','must_have','Table stakes for mid-market B2B SaaS credibility. AEO category has 150+ listings. Grid eligibility requires 10+ reviews. Captures buyers at the exact moment they compare AEO vendors.','var(--teal)'],
+        ['Co-Marketing Partners','nice_to_have','Joint webinars with CMS platforms (Webflow, WordPress ecosystem), co-authored content with complementary tools that share the same ICP but do not compete. Mutual lead generation through shared audience.','var(--amber-dark)'],
+      ].map(([name,priority,desc,color]) => `
+        <div class="card" style="padding:16px 20px;border-left:4px solid ${color};">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div style="font-size:16px;font-weight:700;color:var(--navy);">${name}</div>
+            ${tag(priority, priority==='must_have'?'green':'amber')}
+          </div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+    ` : `
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Channels to Avoid</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:12px;">These channels are wrong for the current stage — not wrong forever. The reasons are specific to a 12-person startup with no marketing team, limited budget, and an emerging category that requires education.</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:4px;">
+      ${[
+        ['Paid LinkedIn / Google Ads at Scale (above $2K/mo)','Budget is limited — non-paid channels first. LinkedIn Ads median CPL is $220, Google Search Ads median CPL is $140. At Yolando\'s current ACV of $6K-$36K/year, unit economics require high close rates to justify paid acquisition. Quality-adjusted cost-per-SQL for LinkedIn is $660-$1,100. No marketing team to optimize campaigns or reduce CPL over time.','Exception: micro-budget retargeting ($200-$500/mo) on LinkedIn in month 2-3 to re-engage website visitors and blog readers. Test, not scale.','var(--red)'],
+        ['Conference Booth Sponsorships','$10K-$50K per event in booth costs, travel, swag, and staffing — prohibitive for a 12-person startup. ROI timeline is too long (single-event exposure with 3-6 month follow-up cycle). The AEO category does not yet have an established conference circuit.','Instead: ATTEND conferences for networking and pursue speaking slots (zero cost, high authority) at events like SEO Week and AEO Conf.','var(--red)'],
+        ['Programmatic Display Advertising','Display has 0.1-0.3% CTR typical. The AEO/GEO category is emerging and requires education — a banner ad cannot educate a VP of Marketing about why their organic traffic decline is an AI search problem. The ICP does not discover B2B martech tools through banner ads. Quality-adjusted cost-per-SQL for display is among the highest of all channels.','Every dollar spent on display would be better invested in content marketing (10-20x more qualified traffic).','var(--red)'],
+        ['TikTok / Instagram Marketing','ICP does not discover, evaluate, or purchase $6K-$36K/year B2B marketing platforms on these channels. VP Marketing and Director of SEO personas do their professional purchasing behavior on LinkedIn, G2, peer communities, and search engines. The team has no video production capability, no social media team, and no budget for social media management tools.','Would produce vanity metrics (followers, views) without pipeline contribution.','var(--red)'],
+      ].map(([channel,reason,alt,color]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 18px;border-left:4px solid ${color};cursor:pointer;">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;">${channel}</div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${reason}</div>
+          <div class="expand-hint">Click for the alternative</div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.6;padding-top:8px;">
+            <div style="padding:10px 14px;border-radius:8px;background:var(--amber-light);border:1px solid #FDE68A;">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--amber-dark);margin-bottom:4px;">The alternative</div>
+              ${alt}
+            </div>
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+    `}
+
+    ${takeaway('<strong>Takeaway:</strong> Non-paid channels first. The founder\'s personal brand is the single largest GTM asset. Dogfooding Yolando\'s own platform on the Yolando blog creates a flywheel where the product is also the growth engine. Agency partnerships multiply reach without adding headcount.')}
+  `;
+  };
+  render();
+  window.render = () => { view = window.view || view; render(); };
+  window.view = view;
+}
+
+// ═══ FUNNEL MATH ═══
+function renderFunnel() {
+  document.getElementById('tabContent').innerHTML = `
+    <div class="card" style="padding:24px;margin-bottom:20px;border-left:4px solid var(--navy);background:linear-gradient(135deg,#EFF6FF,#E0E7FF 50%,#EDE9FE);border:1px solid #C7D2FE;">
+      <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px;">Funnel Assumptions</div>
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.65;">
+        Conservative assumptions for a 12-person startup with founder-led sales, no marketing team, an 18-month-old category where 84% of prospects are doing nothing, and 30-60 day sales cycles. Every number is a starting hypothesis to be validated with real data within 90 days.
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card" style="padding:24px;">
+        <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">90-Day Funnel Model</div>
+        <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:14px;">Click any stage for assumptions</div>
+        ${[
+          ['Target Accounts','50','100%','var(--navy)','50 accounts sourced from LinkedIn Sales Navigator (20), Crunchbase (15), Yolando competitive gap (15)'],
+          ['Contacted','40','80%','#3B82F6','Founder can personalize outreach to 20-30 per week. Prioritize Tier 1 first.'],
+          ['Replied','8-10','20-25%','#2563EB','Personalized AI visibility audit outreach targets 20-25% reply rate (above cold email averages due to product-as-hook)'],
+          ['Demos Completed','5-7','50-70%','#1D4ED8','Education-led demo using prospect\'s live AI visibility data. 30-minute founder-led.'],
+          ['Trials / POC','3-5','60-70%','#059669','14-30 day trial or limited POC. Time-to-first-value target: under 48 hours.'],
+          ['Closed Won','2-3','40-60%','#047857','30-60 day sales cycle for $6K-$36K ACV. Inbound leads close in ~28 days.'],
+        ].map(([stage,count,rate,color,detail]) => `
+          <div class="funnel-stage" style="background:${color};width:${stage==='Target Accounts'?100:stage==='Contacted'?90:stage==='Replied'?75:stage==='Demos Completed'?60:stage==='Trials / POC'?45:35}%;margin-bottom:4px;" onclick="this.nextElementSibling.classList.toggle('show')">${stage}: ${count}</div>
+          <div class="funnel-detail">${detail}<br><strong>Conversion:</strong> ${rate}</div>
+          ${stage !== 'Closed Won' ? '<div class="funnel-arrow">↓ <span class="rate">'+rate+'</span></div>' : ''}
+        `).join('')}
+      </div>
+      <div>
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:12px;">Pipeline Targets (90-Day)</div>
+          <table class="data-table">
+            <thead><tr><th>Metric</th><th>Month 1</th><th>Month 2</th><th>Month 3</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:600;">Outreach sent</td><td>60-80</td><td>100-120</td><td>100-120</td><td>260-320</td></tr>
+              <tr><td style="font-weight:600;">Demos booked</td><td>3-5</td><td>6-10</td><td>8-12</td><td>17-27</td></tr>
+              <tr><td style="font-weight:600;">Pipeline generated</td><td>$30-50K</td><td>$50-100K</td><td>$100-150K</td><td>$180-300K</td></tr>
+              <tr><td style="font-weight:600;">Closed revenue</td><td>—</td><td>$6-18K</td><td>$18-54K</td><td>$24-72K</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card" style="padding:20px;">
+          <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:12px;">Unit Economics</div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.8;">
+            <strong>ACV sweet spot:</strong> $6K-$36K/year ($500-$3,000/mo)<br>
+            <strong>Sales cycle:</strong> 30-60 days (inbound ~28 days)<br>
+            <strong>Founder capacity:</strong> 15-20 simultaneous deals<br>
+            <strong>AE hire trigger:</strong> 8-10 qualified demos/week<br>
+            <strong>Cost-per-lead (organic):</strong> $25-95 (median $55)<br>
+            <strong>AI referral conversion:</strong> 7.1% (4.4x organic search)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Attribution Approach</div>
+    <div style="font-size:14px;color:var(--body-dark);margin-bottom:12px;">Early-stage startup attribution must be simple. Four signals tracked in HubSpot CRM deal properties.</div>
+    <div class="grid-4" style="margin-bottom:16px;">
+      ${[
+        ['Self-Reported','How did you hear about us? On every form and in every demo. Captures dark funnel.','var(--amber-dark)','PRIMARY'],
+        ['First-Touch Source','Which channel first brought this person in? LinkedIn, Blog, G2, Outbound, Community.','var(--blue)','Standard'],
+        ['Content Attribution','Which content piece drove the demo request? Blog post, LinkedIn post, case study.','var(--green-dark)','Standard'],
+        ['Closed-Won Analysis','Post-deal debrief: what actually drove this deal? Combines all signals.','var(--purple)','PRIMARY'],
+      ].map(([name,desc,color,badge]) => `
+        <div class="card" style="padding:16px 18px;border-top:3px solid ${color};">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+            <div style="font-size:15px;font-weight:700;color:var(--navy);">${name}</div>
+            ${badge==='PRIMARY'?'<span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--amber-light);color:var(--amber-dark);border:1px solid #FDE68A;">PRIMARY</span>':''}
+          </div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">If the Math Does Not Work: Four Levers</div>
+    <div class="grid-4" style="margin-bottom:4px;">
+      ${[
+        ['Expand Universe','Loosen firmographic filters: 50-750 employees, broaden to adjacent industries','var(--blue)'],
+        ['Improve Conversion','Better content, sharper messaging, faster time-to-first-value in trials','var(--green-dark)'],
+        ['Increase Deal Size','Target larger companies, bundle more comprehensively, annual contracts','var(--amber-dark)'],
+        ['Shift Channel Mix','Double down on highest-performing channel, cut underperformers','var(--purple)'],
+      ].map(([title,desc,color]) => `
+        <div class="card" style="padding:16px 18px;border-top:3px solid ${color};">
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">${title}</div>
+          <div style="font-size:13px;color:var(--body-dark);line-height:1.5;">${desc}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> Intentionally conservative. 12-person startup, 18-month-old category, founder-led sales. The structure matters more than the placeholder numbers. All numbers to be validated with real pipeline data within 90 days.')}
+  `;
+}
+
+// ═══ 90-DAY TIMELINE ═══
+function renderTimeline() {
+  document.getElementById('tabContent').innerHTML = `
+    <div class="card" style="padding:32px;margin-bottom:20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+        <div style="font-size:20px;font-weight:800;color:var(--navy);">Execution Timeline</div>
+        <div style="font-size:13px;color:#6366F1;font-weight:600;">Hover any bar for details</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:120px repeat(3, 1fr);gap:3px;margin-bottom:20px;">
+        <div></div>
+        ${[
+          ['Month 1','Infrastructure + First Outreach','var(--blue)'],
+          ['Month 2','Content Velocity + Community','var(--green-dark)'],
+          ['Month 3','Full Activation + Validation','var(--amber-dark)'],
+        ].map(([phase,label,color]) => `
+          <div style="text-align:center;padding:12px 8px;border-radius:10px;background:${color};color:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <div style="font-size:14px;font-weight:800;">${phase}</div>
+            <div style="font-size:12px;opacity:0.9;margin-top:2px;">${label}</div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="position:relative;">
+        <div style="position:absolute;top:0;bottom:0;left:110px;right:0;display:grid;grid-template-columns:repeat(12, 1fr);gap:0;pointer-events:none;z-index:0;">
+          ${Array.from({length:12},(_,i)=>`<div style="border-left:1px solid ${i % 4 === 0 ? 'var(--border)' : '#F1F5F9'};height:100%;"></div>`).join('')}
+        </div>
+
+        <div style="margin-bottom:20px;position:relative;z-index:1;">
+          <div style="display:grid;grid-template-columns:120px 1fr;align-items:center;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--blue);"></div>
+              <div style="font-size:15px;font-weight:700;color:var(--navy);">Infrastructure</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px repeat(12, 1fr);gap:3px;align-items:center;">
+            <div></div>
+            ${[
+              [1,2,'var(--blue)','CRM + Analytics','HubSpot CRM setup, GA4 conversion events, AEO platform on yolando.co'],
+              [1,3,'#3B82F6','Collateral + Jobs','Sales one-pager, BirdseyePost case study, demo script, Head of Growth posting'],
+              [2,4,'#60A5FA','Outreach Infra','Email warmup, sequence templates, signal database, LinkedIn content calendar'],
+              [5,7,'#93C5FD','Head of Growth','First marketing hire starts, owns content production and community'],
+              [9,11,'#60A5FA','Metrics Review','Leading indicators, channel performance, pipeline validation'],
+              [11,13,'#93C5FD','Recalibrate','Scoring model + channel allocation updated with real data'],
+            ].map(([s,e,color,text,tip]) => `
+              <div style="grid-column:${s+1}/${e+1};background:${color};color:white;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.1);transition:transform 0.15s;" data-tip="${tip}" onmouseover="showTip(event,this);this.style.transform='scale(1.03)'" onmouseout="hideTip();this.style.transform='scale(1)'">${text}</div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div style="margin-bottom:20px;position:relative;z-index:1;">
+          <div style="display:grid;grid-template-columns:120px 1fr;align-items:center;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--green-dark);"></div>
+              <div style="font-size:15px;font-weight:700;color:var(--navy);">Content</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px repeat(12, 1fr);gap:3px;align-items:center;">
+            <div></div>
+            ${[
+              [2,4,'#059669','First 3 Posts','What is AEO, Yolando vs Otterly, BirdseyePost case study'],
+              [3,5,'#10B981','G2 Reviews','Review requests to 4 customers, profile optimization'],
+              [5,8,'#34D399','Data Study','AI visibility benchmark: 200 B2B SaaS brands in ChatGPT'],
+              [7,9,'#6EE7B7','Comparison Pages','HubSpot AEO vs dedicated, AEO vs SEO pillar page'],
+              [9,11,'#10B981','Content Flywheel','Repurpose webinar/data study into blog, social, email'],
+              [11,13,'#6EE7B7','Guest Content','Pitch MKT1, GTM Newsletter, SEO podcasts'],
+            ].map(([s,e,color,text,tip]) => `
+              <div style="grid-column:${s+1}/${e+1};background:${color};color:white;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.1);transition:transform 0.15s;" data-tip="${tip}" onmouseover="showTip(event,this);this.style.transform='scale(1.03)'" onmouseout="hideTip();this.style.transform='scale(1)'">${text}</div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div style="margin-bottom:8px;position:relative;z-index:1;">
+          <div style="display:grid;grid-template-columns:120px 1fr;align-items:center;margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:10px;height:10px;border-radius:50%;background:var(--orange);"></div>
+              <div style="font-size:15px;font-weight:700;color:var(--navy);">Outreach</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px repeat(12, 1fr);gap:3px;align-items:center;">
+            <div></div>
+            ${[
+              [1,2,'#EA580C','Quick Wins','LinkedIn hook post + first 10 Tier 1 outreach emails'],
+              [2,4,'#F97316','LinkedIn Launch','4-5 posts/week, A/B test data vs contrarian formats'],
+              [4,6,'#FB923C','Outreach Ramp','20-30 personalized emails/week, signal-triggered'],
+              [5,8,'#EA580C','Community','Traffic Think Tank, Exit Five, Superpath engagement'],
+              [8,10,'#C2410C','Full Activation','All channels running, LinkedIn Audio Events test'],
+              [10,13,'#9A3412','Scale + Validate','Double down on winners, cut underperformers, plan month 4+'],
+            ].map(([s,e,color,text,tip]) => `
+              <div style="grid-column:${s+1}/${e+1};background:${color};color:white;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.1);transition:transform 0.15s;" data-tip="${tip}" onmouseover="showTip(event,this);this.style.transform='scale(1.03)'" onmouseout="hideTip();this.style.transform='scale(1)'">${text}</div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:120px repeat(12, 1fr);gap:3px;margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">
+        <div style="font-size:11px;color:var(--muted);font-weight:600;">Week</div>
+        ${Array.from({length:12},(_,i)=>`<div style="text-align:center;font-size:11px;color:var(--muted);font-weight:600;">${i+1}</div>`).join('')}
+      </div>
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Experiments + Quick Wins</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:14px;">Click for test design and decision triggers</div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      ${[
+        ['Experiment: LinkedIn Format A/B','Week 2-4','var(--blue)','Data-driven posts (Yolando platform data) vs. contrarian takes. 4 posts each, alternating days. Measure profile visits and DM conversations from ICP-matching prospects.','Data posts generate 50%+ more ICP profile visits AND 2+ DM conversations.','Winner gets 70% of content mix. Loser gets 30%. If tied: test carousels in Month 2.'],
+        ['Experiment: Outreach Format A/B','Week 2-4','var(--orange)','Personalized AI visibility audit screenshot (Group A, 15 emails) vs. trigger-only reference (Group B, 15 emails). Track reply rate and demo booking rate.','Group A achieves 20%+ reply rate AND 40%+ of replies convert to demos.','If audit outperforms by 50%+: standardize all outreach with visibility audits. If tied: simplify to trigger-only to increase volume.'],
+        ['Experiment: AEO Dogfooding','Week 2-8','var(--green-dark)','3 AEO-optimized blog posts + 1 SEO-only control post. Track AI citation appearances for all 4 posts weekly using Yolando monitoring.','At least 1 AEO-optimized post appears in an AI chatbot answer within 6 weeks. Control does not.','If cited: use as proof point in sales. If not: shift to longer-tail queries and run iteration 2.'],
+        ['Quick Win: Week 1 LinkedIn Post','Day 2-3','var(--purple)','Post from Matt\'s account: live ChatGPT screenshot showing what happens when someone asks about a well-known B2B SaaS brand. Hook: "If you are a B2B SaaS marketing leader, this should concern you."','200+ engagements, 20+ comments, 3-5 DM conversations → warm demo opportunities.','Establishes Matt as the go-to AEO authority on LinkedIn from day one.'],
+      ].map(([name,timing,color,design,success,decision]) => `
+        <div class="card hover" onclick="toggleExpand(this)" style="padding:16px 20px;border-left:4px solid ${color};cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:15px;font-weight:700;color:var(--navy);">${name}</div>
+            <span style="font-size:12px;font-weight:700;color:var(--muted);">${timing}</span>
+          </div>
+          <div class="expand-body"><div style="font-size:14px;color:var(--body-dark);line-height:1.6;padding-top:8px;">
+            <div style="margin-bottom:8px;padding:10px 14px;border-radius:8px;background:#F8FAFC;border:1px solid var(--border);">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:4px;">Test Design</div>${design}
+            </div>
+            <div style="margin-bottom:8px;padding:10px 14px;border-radius:8px;background:var(--green-light);border:1px solid #A7F3D0;">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">Success Criteria</div>${success}
+            </div>
+            <div style="padding:10px 14px;border-radius:8px;background:var(--amber-light);border:1px solid #FDE68A;">
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--amber-dark);margin-bottom:4px;">Decision Trigger</div>${decision}
+            </div>
+          </div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> Weeks 1-4 are designed for founder-only execution. Head of Growth joins in Weeks 5-6. Every experiment has specific kill criteria — no continuing to invest in channels that are not working because "it just needs more time."')}
+  `;
+}
+
+// ═══ OUTREACH PACKAGES ═══
+function renderOutreach() {
+  const ACCOUNTS = [
+    {
+      name: 'Unbounce', color: 'var(--purple)', slug: 'unbounce',
+      summary: 'Landing page builder. 185-250 employees, ~$52M ARR, Vancouver. Content-driven GTM. No AEO tooling. Competitors Instapage and Leadpages visible in AI answers for "best landing page builder."',
+      hook: 'Ask what ChatGPT recommends for "best landing page builder" — Instapage and Leadpages get more prominent placement than Unbounce.',
+      emails: [
+        { persona: 'VP of Marketing', subject: 'Who does ChatGPT recommend over Unbounce?', body: 'When a prospect asks ChatGPT "what is the best landing page builder," the answer now shapes pipeline as much as your Google rankings do. Do you know whether that answer favors Unbounce or Instapage?\n\n51% of B2B software buyers now start research in AI chatbots. For a company whose growth depends on winning the "best landing page builder" conversation, that is a pipeline channel you cannot afford to be invisible in.\n\nYolando monitors how your brand appears in AI-generated recommendations across ChatGPT, Claude, Perplexity, and Gemini — and produces the content that improves your position.\n\nWould a 20-minute walkthrough of how Unbounce currently appears in AI recommendations be useful this week or next?' },
+        { persona: 'Dir of SEO (Champion)', subject: 'What ChatGPT says about Unbounce', body: 'I asked ChatGPT "what is the best landing page builder for small businesses" last week. Unbounce appeared — but not where you would want it. Instapage and Leadpages got more prominent placement.\n\nYour team tracks Google rankings against those competitors daily. But 51% of B2B buyers now start research in AI chatbots, and that number is climbing fast.\n\nWe built Yolando to close that gap. It monitors how Unbounce appears across ChatGPT, Claude, Perplexity, and Gemini, then produces the specific content that improves citation placement — not just charts showing the problem.\n\nWould a 20-minute walkthrough be useful?' },
+        { persona: 'Dir of Marketing Ops', subject: "Unbounce's GA4 + SEMrush blind spot", body: 'Unbounce runs one of the most content-heavy GTM motions in martech — blog, Conversion Benchmark Report, webinars. Your GA4 and SEMrush setup tracks that pipeline well. But neither tool can measure the growing share of prospects who ask an AI chatbot "how do I build a high-converting landing page" and get an answer without ever visiting unbounce.com.\n\nThat is a measurement gap sitting right in the middle of your stack.\n\nYolando is an AEO platform that monitors brand visibility across ChatGPT, Claude, Perplexity, and Gemini, then produces the content that earns citations — monitoring plus execution in one tool, at mid-market pricing.\n\nWorth 20 minutes to walk through how it fits alongside your current stack?' },
+        { persona: 'Content / SEO Manager', subject: 'Who cites Unbounce in AI answers?', body: "Unbounce's blog is one of the most referenced resources in conversion optimization. When marketers ask ChatGPT \"how do I build a high-converting landing page,\" AI models synthesize answers from sources like yours.\n\nBut does your content team have visibility into whether Unbounce is actually being cited in those AI-generated answers?\n\nYolando monitors how your brand appears across ChatGPT, Claude, Perplexity, and Gemini, and produces the content needed to earn citations. Built for marketing teams who cannot hire a dedicated AEO specialist but need that execution output.\n\nWould a 20-minute walkthrough be useful to see where Unbounce currently stands in AI search?" },
+      ],
+      linkedin: [
+        { persona: 'VP of Marketing', note: "{{first_name}}, been following how Unbounce is integrating AI across Smart Traffic and Smart Copy. Interested in connecting — the intersection of AI and conversion optimization is a space I spend a lot of time in." },
+        { persona: 'Dir of SEO', note: "Researching how AI answer engines rank landing page builders — Unbounce's positioning in ChatGPT vs. Instapage caught my attention. Would be great to connect and share what I found." },
+        { persona: 'Dir of Marketing Ops', note: "Hi — noticed Unbounce runs a sophisticated martech stack for a content-heavy GTM motion. I work in AI search visibility, specifically the gap between traditional SEO tools and how AI answer engines surface brands. Would be great to connect." },
+        { persona: 'Content / SEO Manager', note: "Unbounce's content on conversion optimization is some of the most cited in the space. I work on how brands show up in AI search results — a topic I think your team will find increasingly relevant. Would be great to connect." },
+      ],
+      phone: { hook: "I was recently looking at how ChatGPT and Perplexity answer 'what is the best landing page builder,' and Unbounce's placement caught my attention.", q1: "How much of your pipeline traces back to organic search or content? Any shifts in the past 12 months?", q2: "51% of B2B buyers now start in AI chatbots. Has your team started thinking about how Unbounce shows up in those recommendations?", bridge: "That is exactly the gap Yolando was built to close. We monitor how your brand appears across four AI engines and produce the content that earns citations. BirdseyePost data shows AI-sourced leads are worth 20% more revenue and close 40% faster." }
+    },
+    {
+      name: 'Vidyard', color: 'var(--blue)', slug: 'vidyard',
+      summary: 'B2B video platform. 250-350 employees, Kitchener ON. Post-Loom/Atlassian ($975M) acquisition — Loom dominates AI recommendations. VP Marketing vacant.',
+      hook: 'Ask ChatGPT "best video messaging tool for B2B sales" — Loom gets the recommendation far more often than Vidyard, driven by the Atlassian acquisition media coverage.',
+      emails: [
+        { persona: 'VP of Marketing (interim)', subject: 'Who does ChatGPT recommend over Vidyard?', body: "Ask ChatGPT \"what is the best video messaging tool for B2B sales\" and count how many times Loom gets the recommendation versus Vidyard. Since the Atlassian acquisition, Loom's media footprint has trained these models to default to them.\n\nThat matters because 51% of B2B software buyers now start their research in AI chatbots. Every recommendation that goes to Loom is pipeline that never reaches Vidyard.\n\nYolando monitors your brand visibility across ChatGPT, Claude, Perplexity, and Gemini, then produces the specific content that earns AI citations.\n\nWorth 20 minutes to see where Vidyard stands today?" },
+        { persona: 'Dir of SEO (Champion)', subject: "Vidyard's video content in AI answers", body: "Vidyard's benchmark reports and educational content on B2B video strategy are some of the strongest in the category. But when a sales leader asks ChatGPT \"what is the best video platform for B2B sales,\" do you know whether Vidyard's content gets cited — or whether Loom's Atlassian-backed coverage takes the answer?\n\nMonitoring tools show you the problem, but they stop there.\n\nYolando monitors Vidyard's visibility across four AI engines, then produces the specific content needed to earn citations — not just charts showing where you are missing.\n\nWould a 25-minute call make sense?" },
+        { persona: 'Dir of Marketing Ops', subject: "Vidyard's stack gap in AI search", body: "Vidyard produces some of the strongest B2B video marketing content out there. Your HubSpot and GA4 setup tracks how that content performs in traditional search. But when a buyer asks ChatGPT \"what is the best video messaging tool for sales teams,\" does Vidyard get cited, or does Loom?\n\nThat is a surface your current stack cannot measure.\n\nYolando monitors brand citations across four AI engines and produces the content needed to earn those citations — monitoring plus execution in a single tool at mid-market pricing.\n\nWorth 20 minutes to walk through how it fits alongside what you already run?" },
+        { persona: 'Content / SEO Manager', subject: "Vidyard's video content in AI answers?", body: "Vidyard publishes some of the most referenced B2B video marketing content online — benchmark reports, strategy guides, the full resource library. When a marketer asks ChatGPT \"how to use video in sales outreach,\" those answers draw from content like yours. The question is whether Vidyard gets credited or Loom gets the recommendation.\n\nYolando monitors how your brand appears across four AI engines, then its 40+ specialized agents produce the content that earns citations. The AEO function your team would need to build, without adding headcount.\n\nWould a 20-minute call to see where Vidyard currently stands be useful?" },
+      ],
+      linkedin: [
+        { persona: 'VP of Marketing (interim)', note: "Vidyard's AI Avatars launch caught my eye — impressive product innovation. Researching how B2B video companies are showing up in AI search recommendations vs. competitors post-Loom acquisition. Would value connecting." },
+        { persona: 'Dir of SEO', note: "Hi — Vidyard's B2B video benchmark reports are a go-to resource in the category. I work on AI search visibility for SaaS brands and would enjoy connecting around how content-driven companies are approaching the AI citation challenge." },
+        { persona: 'Dir of Marketing Ops', note: "Hi — Vidyard runs a sophisticated martech stack behind a content-heavy inbound motion. I work on AI search visibility, specifically the gap between traditional SEO tools and how AI answer engines cite brands. Would be great to connect." },
+        { persona: 'Content / SEO Manager', note: "Vidyard's B2B video marketing content is the kind AI answer engines synthesize heavily — curious whether your team tracks how it surfaces in ChatGPT and Perplexity. Working in the AEO space and would value connecting." },
+      ],
+      phone: { hook: "I noticed when you ask ChatGPT for the best B2B sales video platform, Loom gets cited far more often than Vidyard — likely because the Atlassian acquisition generated so much media coverage.", q1: "Since the Loom-Atlassian acquisition, how has Vidyard's competitive strategy shifted from a marketing standpoint?", q2: "When your team evaluates channel performance, do you have any visibility into how AI chatbots are recommending Vidyard versus competitors?", bridge: "Yolando monitors how your brand appears across four AI engines, shows you where competitors are getting cited instead, and produces the content that earns those citations. ChatGPT-sourced leads close 40% faster and are worth 20% more revenue." }
+    },
+    {
+      name: 'Chili Piper', color: 'var(--orange)', slug: 'chilipiper',
+      summary: 'Revenue ops / scheduling. 200-300 employees, Brooklyn NY. Series B ($54M, Tiger Global). Built the speed-to-lead category. Calendly dominates AI recommendations.',
+      hook: 'Chili Piper invented speed-to-lead — but when a VP of Sales asks ChatGPT about it, the AI may give the answer without citing the source or recommending the solution.',
+      emails: [
+        { persona: 'VP of Marketing', subject: 'Who does ChatGPT recommend for lead routing?', body: "When a B2B buyer asks ChatGPT \"what is the best tool for routing inbound leads,\" does Chili Piper or Calendly get recommended? Calendly's larger content footprint means AI engines tend to favor them — regardless of which product actually fits.\n\n51% of B2B software buyers now start research in AI chatbots, and those leads convert at 4.4x the rate of traditional organic.\n\nYolando monitors exactly how Chili Piper appears across four AI engines for your key category queries, then produces the content that earns citations for your inbound-specific differentiation.\n\nWould you be open to a 20-minute call?" },
+        { persona: 'Dir of SEO (Champion)', subject: 'Chili Piper coined speed-to-lead', body: "Chili Piper has done more than anyone to make speed-to-lead a standard metric in B2B sales. But when a VP of Sales asks ChatGPT \"what is speed-to-lead and which tools improve it,\" does Chili Piper get cited as the authority — or does the AI give the answer your content created without mentioning the source?\n\nYolando monitors how Chili Piper appears across four AI engines, then produces the content structured to earn those citations.\n\nWould a 25-minute call to walk through how Chili Piper surfaces in AI answers for speed-to-lead queries make sense?" },
+        { persona: 'Dir of Marketing Ops', subject: "Chili Piper's HubSpot stack blind spot", body: "Chili Piper has built one of the strongest content engines in the scheduling space. Your HubSpot stack tracks how that content performs in traditional search. But it cannot tell you what happens when a VP of Sales asks ChatGPT \"what is the best tool for routing inbound leads.\"\n\nThat is a measurement gap your current stack structurally cannot close.\n\nYolando monitors brand visibility across four AI engines, then produces the content that earns citations. Full workflow at mid-market pricing without enterprise procurement.\n\nWorth 20 minutes?" },
+        { persona: 'Content / SEO Manager', subject: 'Who gets credit for speed-to-lead?', body: "Chili Piper essentially built the speed-to-lead conversation — the guides, the benchmarks, the best practices. That content investment is significant.\n\nWhen a marketer asks ChatGPT \"what is speed-to-lead and what tools help improve it,\" does Chili Piper get cited as the authority? Or does the AI give the answer your content created without attributing the source?\n\nYolando monitors whether your brand is being cited across four AI engines, then produces the content structured to earn those citations.\n\nWorth a 20-minute walkthrough?" },
+      ],
+      linkedin: [
+        { persona: 'VP of Marketing', note: "{{first_name}}, been following Chili Piper's work in inbound lead routing — curious how you are thinking about AI search as a discovery channel given how fast buyer behavior is shifting toward chatbots for software research." },
+        { persona: 'Dir of SEO', note: "Hi — Chili Piper's speed-to-lead content is category-defining work. I focus on AI search visibility for B2B SaaS and would enjoy connecting around how content-driven brands are navigating the AI citation challenge." },
+        { persona: 'Dir of Marketing Ops', note: "Hi — Chili Piper's HubSpot-native stack for content-led growth caught my attention. I work in AI search visibility, specifically the gap between traditional martech and how AI answer engines surface B2B brands. Would be great to connect." },
+        { persona: 'Content / SEO Manager', note: "Hi — Chili Piper's speed-to-lead content is some of the best thought leadership in the scheduling space. Curious whether you have explored how AI answer engines handle that content. Would be great to connect." },
+      ],
+      phone: { hook: "I was looking at how AI answer engines recommend inbound lead routing tools, and I noticed Calendly and Chili Piper show up very differently.", q1: "How are you thinking about AI chatbots as a discovery channel? 51% of B2B buyers start research there now.", q2: "Chili Piper's differentiation around inbound-specific routing is nuanced. How are you making sure that surfaces when buyers do early-stage research in AI tools?", bridge: "That is exactly the problem Yolando was built to solve. We monitor how Chili Piper appears across four AI engines for your key queries, then produce the content that earns citations for your differentiators. BirdseyePost data: ChatGPT leads are worth 20% more and close 40% faster." }
+    },
+    {
+      name: 'Ada', color: 'var(--green-dark)', slug: 'ada',
+      summary: 'AI customer service. 200-500 employees, Toronto. Series C ($190.5M, $1.2B valuation). Zendesk and Intercom dominate AI answers. Repositioning from chatbot to AI Agent. CMO vacant.',
+      hook: 'When prospects ask ChatGPT "best AI customer service platform," Zendesk and Intercom consistently dominate. Ada — despite being AI-native — risks being absent.',
+      emails: [
+        { persona: 'VP of Marketing (interim)', subject: 'When prospects ask ChatGPT about AI CX', body: "When a prospect asks ChatGPT \"what is the best AI customer service platform,\" Zendesk and Intercom consistently dominate the recommendation. Does Ada's team have visibility into where you stand in those answers?\n\n51% of B2B software buyers now start research in AI chatbots. For a company competing against Zendesk and Intercom, that is pipeline lost before your sales team gets a conversation.\n\nYolando monitors how your brand appears across four AI engines — and produces the content that earns citations. AI-sourced leads are worth 20% more revenue and close 40% faster.\n\nWould 20 minutes to see how Ada currently appears in AI recommendations be useful?" },
+        { persona: 'Dir of SEO (Champion)', subject: "Ada's content in AI-generated answers", body: "Ada's thought leadership on automated resolution and conversational AI is strong — your team clearly invests in content as a growth channel.\n\nHere is the shift: 51% of B2B software buyers now start research in AI chatbots, and content structured for Google uses different patterns than content that earns AI citations.\n\nYolando closes that gap — it monitors how Ada appears across four AI engines, then produces publish-ready content designed to earn AI citations.\n\nWould 20 minutes to see how Ada currently appears be useful?" },
+        { persona: 'Dir of Marketing Ops', subject: "Ada's content stack has a blind spot", body: "Ada publishes strong thought leadership on AI customer service. Your HubSpot and GA4 setup tells you how that content performs on Google. But when a VP of CX asks Perplexity \"what is the best AI customer service platform,\" does Ada get cited alongside Zendesk and Intercom?\n\nThat is a measurement surface your current stack does not cover.\n\nYolando monitors brand visibility across four AI engines, then produces the content needed to earn those citations. Full-stack AEO in a single tool at mid-market pricing.\n\nWorth 20 minutes?" },
+        { persona: 'Content / SEO Manager', subject: "Ada's AI Agent repositioning has a gap", body: "Ada's shift from chatbot to AI Agent platform is clear across your site and product messaging. But when someone asks ChatGPT \"best AI agent for customer service,\" does the answer describe Ada as an AI agent platform, or still use the chatbot label from older training data?\n\nYolando monitors how AI engines describe Ada today and produces the content that shifts that description. 40+ specialized agents handle research, analysis, and drafts. Your team reviews and publishes.\n\nWorth 20 minutes to see how Ada currently shows up?" },
+      ],
+      linkedin: [
+        { persona: 'VP of Marketing (interim)', note: "{{first_name}}, been following Ada's push from chatbot to AI Agent positioning — the category shift is significant. Interested in connecting around how AI search is reshaping B2B software discovery in the CX space." },
+        { persona: 'Dir of SEO', note: "Ada's content on AI customer service and automated resolution consistently stands out. Working in the AEO/GEO space and would value connecting with others navigating the shift from traditional SEO to AI search visibility." },
+        { persona: 'Dir of Marketing Ops', note: "Hi — Ada runs a content-heavy inbound engine on HubSpot and Contentful across a competitive AI CX space. I work on AI search visibility, specifically the gap between traditional SEO measurement and how AI answer engines cite brands. Would be great to connect." },
+        { persona: 'Content / SEO Manager', note: "Hi — Ada's repositioning from chatbot to AI Agent platform is a smart move. I work on how AI answer engines categorize and cite brands during these kinds of shifts. Happy to connect." },
+      ],
+      phone: { hook: "I have been looking at the AI customer service space and noticed that when you ask ChatGPT to recommend the best AI customer service platform, Zendesk and Intercom tend to dominate.", q1: "Ada is competing against Zendesk and Intercom with massive content footprints. When you think about where pipeline originates, has that shifted over the past 12 months?", q2: "With the marketing leadership transition, if you found out AI search was consistently sending prospects to Zendesk and Intercom before Ada got a look, how quickly would that become a priority?", bridge: "That is exactly what Yolando was built to solve. We monitor how Ada appears across four AI engines for the queries that matter most — and produce the content that earns citations. AI-sourced leads are worth 20% more revenue and close 40% faster." }
+    },
+  ];
+
+  let activeAcct = null;
+  let outreachView = 'emails';
+
+  const renderOutreachContent = () => {
+    document.getElementById('tabContent').innerHTML = `
+    <div class="card" style="padding:24px;margin-bottom:20px;border-left:4px solid var(--navy);background:linear-gradient(135deg,#EFF6FF,#E0E7FF 50%,#EDE9FE);border:1px solid #C7D2FE;">
+      <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px;">What You Are Looking At</div>
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.65;">
+        Four Tier 1 accounts, each with per-persona outreach across three channels. Every email, LinkedIn note, and phone script was generated by the Account Intelligence and Outreach System — the AI agent pipeline shown in the AI Execution Layer tab. These are production-ready outreach artifacts, not templates. Each one references account-specific intelligence: competitive positioning, tech stack gaps, content strategy vulnerabilities, and organizational triggers.
+      </div>
+    </div>
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;">Select an Account</div>
+    <div style="font-size:13px;color:#6366F1;font-weight:600;margin-bottom:12px;">Click an account to expand its full outreach package.</div>
+    <div class="grid-2" style="margin-bottom:16px;">
+      ${ACCOUNTS.map((a, idx) => `
+        <div class="card hover" style="padding:18px 22px;border-left:4px solid ${a.color};cursor:pointer;${activeAcct===idx?'box-shadow:0 0 0 2px '+a.color+';':''}" onclick="window._setAcct(${idx})">
+          <div style="font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px;">${a.name}</div>
+          <div style="font-size:14px;color:var(--body-dark);line-height:1.5;margin-bottom:8px;">${a.summary}</div>
+          <div style="padding:8px 12px;border-radius:8px;background:#F8FAFC;border:1px solid var(--border);font-size:13px;color:var(--body-dark);line-height:1.5;">
+            <strong style="color:${a.color};">Outreach hook:</strong> ${a.hook}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    ${activeAcct !== null ? (() => {
+      const a = ACCOUNTS[activeAcct];
+      return `
+      <div style="padding:20px;border-radius:16px;border:2px solid ${a.color};background:white;margin-bottom:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <div style="font-size:20px;font-weight:800;color:var(--navy);">${a.name} — Outreach Package</div>
+          <div class="toggle-group" style="margin-bottom:0;">
+            <button class="toggle-btn ${outreachView==='emails'?'active':''}" onclick="window._setView('emails')">Emails</button>
+            <button class="toggle-btn ${outreachView==='linkedin'?'active':''}" onclick="window._setView('linkedin')">LinkedIn</button>
+            <button class="toggle-btn ${outreachView==='phone'?'active':''}" onclick="window._setView('phone')">Phone Script</button>
+          </div>
+        </div>
+
+        ${outreachView === 'emails' ? `
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            ${a.emails.map((e, i) => `
+              <div class="card hover" onclick="toggleExpand(this)" style="padding:14px 18px;border-left:4px solid ${a.color};cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div>
+                    <div style="font-size:15px;font-weight:700;color:var(--navy);">${e.persona}</div>
+                    <div style="font-size:13px;color:var(--muted);margin-top:2px;">Subject: ${e.subject}</div>
+                  </div>
+                  ${tag(['Budget Owner','Champion','Tech Evaluator','End User'][i], ['green','blue','purple','amber'][i])}
+                </div>
+                <div class="expand-hint">Click to read the full email</div>
+                <div class="expand-body">
+                  <div style="padding:14px 18px;border-radius:10px;background:#F8FAFC;border:1px solid var(--border);margin-top:4px;">
+                    <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px;">Subject: ${e.subject}</div>
+                    <div style="font-size:14px;color:var(--body-dark);line-height:1.7;white-space:pre-line;">${e.body}</div>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        ` : outreachView === 'linkedin' ? `
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            ${a.linkedin.map((l, i) => `
+              <div class="card" style="padding:16px 18px;border-left:4px solid ${a.color};">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                  <div style="font-size:15px;font-weight:700;color:var(--navy);">${l.persona}</div>
+                  <span style="font-size:12px;color:var(--muted);font-weight:600;">${l.note.length} chars</span>
+                </div>
+                <div style="padding:12px 16px;border-radius:10px;background:#F8FAFC;border:1px solid var(--border);font-size:14px;color:var(--body-dark);line-height:1.6;font-style:italic;">"${l.note}"</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : `
+          <div class="card" style="padding:20px;border-left:4px solid ${a.color};">
+            <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:14px;">Phone Script — Budget Owner</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="padding:12px 16px;border-radius:10px;background:var(--blue-light);border:1px solid var(--blue-pale);">
+                <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--blue);margin-bottom:4px;">Opening Hook</div>
+                <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${a.phone.hook}</div>
+              </div>
+              <div style="padding:12px 16px;border-radius:10px;background:#F8FAFC;border:1px solid var(--border);">
+                <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:4px;">Discovery Question 1</div>
+                <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${a.phone.q1}</div>
+              </div>
+              <div style="padding:12px 16px;border-radius:10px;background:#F8FAFC;border:1px solid var(--border);">
+                <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:4px;">Discovery Question 2</div>
+                <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${a.phone.q2}</div>
+              </div>
+              <div style="padding:12px 16px;border-radius:10px;background:var(--green-light);border:1px solid #A7F3D0;">
+                <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:4px;">Product Bridge</div>
+                <div style="font-size:14px;color:var(--body-dark);line-height:1.6;">${a.phone.bridge}</div>
+              </div>
+            </div>
+          </div>
+        `}
+      </div>
+      `;
+    })() : `
+      <div style="padding:40px;text-align:center;color:var(--muted);font-size:16px;border:2px dashed var(--border);border-radius:16px;margin-bottom:16px;">
+        Click an account above to view its full outreach package
+      </div>
+    `}
+
+    ${takeaway('<strong>Takeaway:</strong> Every outreach artifact is account-specific, not templated. The emails reference each company\'s competitive positioning, tech stack gaps, and content vulnerabilities. The LinkedIn notes stay under 300 characters. The phone scripts include discovery questions that surface pain before pitching. All generated by the AI Account Intelligence system — a human reviews and personalizes the final 10%.')}
+  `;
+  };
+
+  window._setAcct = (idx) => { activeAcct = activeAcct === idx ? null : idx; outreachView = 'emails'; renderOutreachContent(); };
+  window._setView = (v) => { outreachView = v; renderOutreachContent(); };
+
+  renderOutreachContent();
+}
+
+// ═══ AI EXECUTION LAYER ═══
+function buildTeam(id, title, desc, col, outputText) {
+  const agents = id === 'gtm' ? [
+    {line1:'Market',line2:'Intelligence'},
+    {line1:'ICP',line2:'Definition'},
+    {line1:'Channel',line2:'Strategy'},
+    {line1:'Messaging',line2:'Framework'},
+    {line1:'90-Day',line2:'Plan'},
+  ] : [
+    {line1:'Firmographic',line2:'Verification'},
+    {line1:'Intelligence',line2:'Brief'},
+    {line1:'Buying',line2:'Committee'},
+    {line1:'Creative',line2:'Variables'},
+    {line1:'Outreach',line2:'Generation'},
+    {line1:'Campaign',line2:'Intelligence'},
+  ];
+
+  const cx = 400, cy = 200, r = 160;
+  const p = agents.map((_, i) => {
+    const angle = (-90 + 360/agents.length*i) * Math.PI/180;
+    return [Math.round(cx + r*Math.cos(angle)), Math.round(cy + r*Math.sin(angle))];
+  });
+
+  window._ai = window._ai || {};
+  window._ai[id] = agents.map((a,i) => ({
+    name: `${a.line1} ${a.line2} Agent`,
+    desc: id === 'gtm' ? [
+      'Researches market size, competitors, buying patterns, disruption risks, and macro trends. 41 search queries, 87 sources cited.',
+      'Defines firmographic filters, technographic signals, behavioral triggers, buying committee, pain points, and anti-ICP criteria.',
+      'Recommends GTM motion (hybrid), primary and secondary channels, partnerships, integration priorities, and channels to avoid.',
+      'Produces market narrative, positioning angles, per-persona messaging, competitive differentiation, guardrails, and objection handling.',
+      'Creates month-by-month infrastructure, target accounts, experiments, quick wins, decision points, and month 4+ scaling candidates.',
+    ][i] : [
+      'Verifies each account against ICP firmographic and exclusion criteria. Confirms employee count, revenue, funding stage, industry fit.',
+      'Deep-dives each account: tech stack, content strategy, competitive position, AI search vulnerability, organizational changes.',
+      'Maps the buying committee at each account: identifies VP Marketing, Dir SEO, Dir Marketing Ops, CFO by name where possible.',
+      'Generates 5 creative variables per account: pain points, competitive context, trigger events, thought leadership angles.',
+      'Produces persona-specific email sequences, LinkedIn connection notes, and phone scripts with objection handling.',
+      'Generates audience segments, LinkedIn Matched Audiences, Google Ads keywords, LinkedIn ad copy, and Google Search ad copy.',
+    ][i],
+    input: id === 'gtm' ? [
+      'Product brief + scenario type (new product launch)',
+      'Market Intelligence output + product brief',
+      'ICP Definition + Market Intelligence outputs',
+      'All upstream agent outputs (Agents 1-3)',
+      'All upstream agent outputs (Agents 1-4)',
+    ][i] : [
+      'Target account list + ICP definition from GTM Engine',
+      'Verified accounts + firmographic data',
+      'Intelligence brief + ICP buying committee definition',
+      'Intelligence brief + buying committee map',
+      'Creative variables + messaging framework from GTM Engine',
+      'All upstream outputs + channel strategy from GTM Engine',
+    ][i],
+    output: id === 'gtm' ? [
+      'Structured JSON: market size, competitors, buying patterns, disruption risks (577 lines)',
+      'Structured JSON: firmographic filters, technographic signals, behavioral triggers, buying committee, pain points (299 lines)',
+      'Structured JSON: GTM motion, channels, partnerships, integration priorities (298 lines)',
+      'Structured JSON: narrative, positioning angles, persona messaging, competitive differentiation, objection handling (237 lines)',
+      'Structured JSON: monthly plan, target accounts, experiments, quick wins, decision points (507 lines)',
+    ][i] : [
+      'Verified account profiles with ICP fit confirmation',
+      'Per-account intelligence briefs with tech stack, content strategy, competitive context',
+      'Named buying committee contacts with role mapping and engagement strategy',
+      '5 creative variables per account with product connections and outreach angles',
+      'Per-persona email sequences, LinkedIn notes, and phone scripts (4 personas × 4 accounts)',
+      'Audience segments, matched audiences, 22 Google Ads keywords, 9 LinkedIn ads, 4 Google Search campaigns',
+    ][i],
+  }));
+  window._ai[id+'Lead'] = {
+    name: 'Team Lead (Orchestrator)',
+    desc: id === 'gtm'
+      ? 'Orchestrates the 5-agent pipeline sequentially. Passes approved output from each agent as input to the next. Human reviews and approves between each stage.'
+      : 'Orchestrates the 6-agent pipeline sequentially. Each agent receives all upstream outputs. Produces a complete account outreach package per account.',
+    input: id === 'gtm' ? 'Product brief for Yolando' : 'GTM Strategy Engine output + target account CSV',
+    output: id === 'gtm' ? 'Complete GTM strategy across 5 structured outputs' : 'Complete outreach packages for 4 Tier 1 accounts across all personas and channels',
+  };
+
+  return `
+    <div style="margin-bottom:40px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <div style="width:40px;height:40px;border-radius:10px;background:${col};color:white;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;">${id==='gtm'?'1':'2'}</div>
+        <div style="font-size:22px;font-weight:800;color:var(--navy);">${title}</div>
+      </div>
+      <div style="font-size:15px;color:var(--body-dark);margin-bottom:16px;line-height:1.6;">${desc}</div>
+
+      <div style="display:grid;grid-template-columns:1fr minmax(360px, 800px) 1fr;gap:0;">
+        <div id="${id}PopL" style="min-height:100px;"></div>
+        <div>
+          <svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            ${p.map(([x,y],i) => `
+              <line id="${id}L${i}" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${col}" stroke-width="2.5" opacity="0.12" style="transition:all 0.25s;"/>
+            `).join('')}
+            <g onclick="aiClick('${id}',-1)" style="cursor:pointer;">
+              <circle cx="${cx}" cy="${cy}" r="42" fill="var(--navy)" id="${id}Nlead" style="transition:all 0.25s;"/>
+              <circle cx="${cx}" cy="${cy-8}" r="10" fill="white" opacity="0.9"/>
+              <ellipse cx="${cx}" cy="${cy+9}" rx="14" ry="9" fill="white" opacity="0.9"/>
+              <text x="${cx}" y="${cy+64}" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">Team Lead</text>
+            </g>
+            ${p.map(([x,y],i) => {
+              const isTop = y < cy - 100;
+              return `
+              <g onclick="aiClick('${id}',${i})" style="cursor:pointer;">
+                <circle id="${id}N${i}" cx="${x}" cy="${y}" r="36" fill="${col}" style="transition:all 0.25s;"/>
+                <circle cx="${x}" cy="${y-7}" r="9" fill="white" opacity="0.9"/>
+                <ellipse cx="${x}" cy="${y+8}" rx="12" ry="7.5" fill="white" opacity="0.9"/>
+                ${isTop ? `
+                  <text x="${x+50}" y="${y-8}" text-anchor="start" font-size="14" font-weight="700" fill="#0F172A">${agents[i].line1}</text>
+                  <text x="${x+50}" y="${y+8}" text-anchor="start" font-size="14" font-weight="700" fill="#0F172A">${agents[i].line2}</text>
+                  <text x="${x+50}" y="${y+23}" text-anchor="start" font-size="12.5" font-weight="600" fill="#64748B">Agent</text>
+                ` : `
+                  <text x="${x}" y="${y+54}" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">${agents[i].line1}</text>
+                  <text x="${x}" y="${y+70}" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">${agents[i].line2}</text>
+                  <text x="${x}" y="${y+86}" text-anchor="middle" font-size="12.5" font-weight="600" fill="#64748B">Agent</text>
+                `}
+              </g>
+            `}).join('')}
+          </svg>
+          <div style="font-size:14px;color:#6366F1;font-weight:600;text-align:center;margin-top:6px;">Click any agent to see their role, input, and output</div>
+        </div>
+        <div id="${id}PopR" style="min-height:100px;"></div>
+      </div>
+      <div class="card" style="padding:16px 20px;margin-top:16px;border-left:4px solid ${col};">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:${col};margin-bottom:4px;">Team Output</div>
+        <div style="font-size:15px;color:var(--body-dark);line-height:1.5;">${outputText}</div>
+      </div>
+    </div>
+  `;
+}
+
+function renderAI() {
+  window._aiActive = {id:null, i:null};
+
+  window.aiClick = function(id, i) {
+    if(window._aiActive.id) {
+      const prev = window._aiActive;
+      if(prev.i === -1) {
+        document.getElementById(prev.id+'Nlead').setAttribute('r','42');
+      } else {
+        document.getElementById(prev.id+'L'+prev.i).setAttribute('opacity','0.12');
+        document.getElementById(prev.id+'L'+prev.i).setAttribute('stroke-width','2.5');
+        document.getElementById(prev.id+'N'+prev.i).setAttribute('r','36');
+      }
+      document.getElementById(prev.id+'PopL').innerHTML = '';
+      document.getElementById(prev.id+'PopR').innerHTML = '';
+    }
+    if(window._aiActive.id === id && window._aiActive.i === i) {
+      document.getElementById(id+'PopL').innerHTML = '';
+      document.getElementById(id+'PopR').innerHTML = '';
+      window._aiActive = {id:null, i:null};
+      return;
+    }
+    if(i === -1) {
+      document.getElementById(id+'Nlead').setAttribute('r','48');
+    } else {
+      document.getElementById(id+'L'+i).setAttribute('opacity','0.9');
+      document.getElementById(id+'L'+i).setAttribute('stroke-width','4.5');
+      document.getElementById(id+'N'+i).setAttribute('r','42');
+    }
+    let isRight = true;
+    if(i >= 0) {
+      const count = window._ai[id].length;
+      const angle = (-90 + 360/count*i) * Math.PI/180;
+      isRight = (400 + 160*Math.cos(angle)) >= 400;
+    }
+    let a = i === -1 ? window._ai[id+'Lead'] : window._ai[id][i];
+    const borderCol = i === -1 ? '#0F172A' : (id==='gtm' ? '#2563EB' : '#C2410C');
+    const cardHTML = `
+      <div class="card" style="padding:18px 20px;border-left:4px solid ${borderCol};box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">${a.name}</div>
+          <div onclick="aiClose('${id}')" style="cursor:pointer;font-size:16px;color:var(--muted);padding:0 4px;line-height:1;">✕</div>
+        </div>
+        <div style="font-size:14px;color:var(--body-dark);line-height:1.6;margin-bottom:12px;">${a.desc}</div>
+        <div style="font-size:14px;color:var(--body-dark);line-height:1.6;margin-bottom:4px;"><strong>Input:</strong> ${a.input}</div>
+        <div style="font-size:14px;color:var(--body-dark);line-height:1.6;"><strong>Output:</strong> ${a.output}</div>
+      </div>
+    `;
+    document.getElementById(id+'PopL').innerHTML = '';
+    document.getElementById(id+'PopR').innerHTML = '';
+    if(isRight) { document.getElementById(id+'PopR').innerHTML = cardHTML; }
+    else { document.getElementById(id+'PopL').innerHTML = cardHTML; }
+    window._aiActive = {id, i};
+  };
+
+  window.aiClose = function(id) {
+    if(window._aiActive.id === id) {
+      if(window._aiActive.i === -1) {
+        document.getElementById(id+'Nlead').setAttribute('r','42');
+      } else {
+        document.getElementById(id+'L'+window._aiActive.i).setAttribute('opacity','0.12');
+        document.getElementById(id+'L'+window._aiActive.i).setAttribute('stroke-width','2.5');
+        document.getElementById(id+'N'+window._aiActive.i).setAttribute('r','36');
+      }
+    }
+    document.getElementById(id+'PopL').innerHTML = '';
+    document.getElementById(id+'PopR').innerHTML = '';
+    window._aiActive = {id:null, i:null};
+  };
+
+  document.getElementById('tabContent').innerHTML = `
+    <div class="card" style="padding:24px;margin-bottom:32px;border:1px solid #C7D2FE;background:linear-gradient(135deg,#EFF6FF,#E0E7FF 50%,#EDE9FE);">
+      <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px;">How AI Makes This Plan Executable at Scale</div>
+      <div style="font-size:15px;color:var(--body-dark);line-height:1.65;">This plan requires market intelligence across 87 sources, scoring and tiering for 50+ accounts, per-persona outreach for 4 buying committee roles, and a content engine producing AEO-optimized content weekly. Two AI systems handle the research, scoring, and drafting. Humans handle strategy, relationships, and decisions.</div>
+    </div>
+
+    <div style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:4px;">Two AI Systems, Already Built and Tested</div>
+    <div style="font-size:15px;color:var(--body-dark);margin-bottom:32px;">Both systems are working demos built in Claude Code. They have been tested on Yolando.</div>
+
+    ${buildTeam('gtm', 'GTM Strategy Engine', 'Five-agent sequential pipeline that produces a complete go-to-market strategy from a single product brief. Each agent receives approved output from all upstream agents with human review between each stage. Covers market intelligence, ICP definition, channel strategy, messaging framework, and 90-day execution planning.', '#2563EB', 'Complete GTM strategy from a single product brief: market intelligence (87 sources, 41 queries), ICP definition, channel strategy, messaging framework, and 90-day plan with experiments and decision points.')}
+
+    ${buildTeam('aio', 'Account Intelligence & Outreach System', 'Six-agent sequential pipeline. Takes a list of target accounts as input. The first three agents verify, research, and map the buying committee at each account. The last three generate creative variables, per-persona outreach, and campaign intelligence.', '#C2410C', 'From a target account list to scored, researched account packages with 5 creative variables each, 4 persona-specific email sequences, LinkedIn connection notes, phone scripts with objection handling, audience segments, and Google/LinkedIn ad copy.')}
+
+    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:12px;">What AI Handles vs What Stays Human</div>
+    <div class="grid-2" style="margin-bottom:4px;">
+      <div class="card" style="padding:18px 20px;border-left:4px solid var(--blue);">
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">AI Handles</div>
+        <div style="font-size:14px;color:var(--body-dark);line-height:1.7;">
+          <strong>Research:</strong> Market intelligence across 87 sources, competitive profiling, tech stack detection<br>
+          <strong>Scoring:</strong> Signal detection, behavioral trigger monitoring, tier assignment with rationale<br>
+          <strong>Drafting:</strong> Per-persona email sequences, LinkedIn notes, phone scripts, ad copy<br>
+          <strong>Pattern detection:</strong> AI visibility gaps, competitive citation analysis, content optimization
+        </div>
+      </div>
+      <div class="card" style="padding:18px 20px;border-left:4px solid var(--green);">
+        <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">Stays Human</div>
+        <div style="font-size:14px;color:var(--body-dark);line-height:1.7;">
+          <strong>Strategy:</strong> Channel decisions, budget allocation, GTM motion design, scoring recalibration<br>
+          <strong>Relationships:</strong> Demo conversations, prospect engagement, partnership building<br>
+          <strong>Judgment:</strong> Review and approve AI-drafted outreach, editorial direction, messaging guardrails<br>
+          <strong>Decisions:</strong> Tier promotions, experiment kill criteria, hiring priorities
+        </div>
+      </div>
+    </div>
+
+    ${takeaway('<strong>Takeaway:</strong> The AI execution layer is not theoretical. Both systems are built, tested on Yolando, and ready to deploy. The plan was designed to be AI-executed from the start — one person reviews what AI drafts instead of a team building from scratch.')}
+  `;
+}
+
+// ═══ TOOLTIP ═══
+function showTip(e, el) {
+  const tip = el.dataset.tip;
+  if (!tip) return;
+  const tt = document.getElementById('tooltip');
+  tt.textContent = tip;
+  tt.classList.add('show');
+  tt.style.left = Math.min(e.clientX + 12, window.innerWidth - 320) + 'px';
+  tt.style.top = (e.clientY - 50) + 'px';
+}
+function hideTip() { document.getElementById('tooltip').classList.remove('show'); }
+
+// ═══ KEYBOARD ═══
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); if (activeTab < TABS.length - 1) switchTab(activeTab + 1); }
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); if (activeTab > 0) switchTab(activeTab - 1); }
+});
+
+// ═══ INIT ═══
+buildNav();
+renderMain();
+</script>
+</body>
+</html>
